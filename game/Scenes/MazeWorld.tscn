@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://fn84tracrjhm"]
+
+[node name="MazeWorld" type="Node2D"]
