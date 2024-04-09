@@ -11,7 +11,8 @@ config_version=5
 [application]
 
 config/name="Maze"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+run/main_scene="res://Scenes/MainMenu.tscn"
+config/features=PackedStringArray("4.2", "C#", "GL Compatibility")
 config/icon="res://Assets/icon.svg"
 
 [dotnet]

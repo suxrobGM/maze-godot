@@ -1,6 +1,8 @@
 using Godot;
 using System;
 
+namespace Maze.Scripts;
+
 public partial class Player : Node
 {
 	// Called when the node enters the scene tree for the first time.
