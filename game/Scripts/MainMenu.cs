@@ -19,7 +19,7 @@ public partial class MainMenu : Control
 	
 	private void OnStartButtonPressed()
 	{
-		GetTree().ChangeSceneToFile("res://Scenes/Game.tscn");
+		GetTree().ChangeSceneToFile("res://Scenes/Maze.tscn");
 	}
 	
 	private void OnExitButtonPressed()

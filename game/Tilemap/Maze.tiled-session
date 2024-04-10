@@ -1,0 +1,106 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "tileset.tsx",
+    "expandedProjectPaths": [
+    ],
+    "exportAsImage.drawObjectLabels": true,
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "C:/Users/suxro/source/repos/chestnut/packages/shared/src/assets/tilemaps/plains.json": {
+            "scale": 1,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 395.5,
+                "y": 546
+            }
+        },
+        "C:/Users/suxro/source/repos/chestnut/packages/shared/src/assets/tilemaps/plains.json#tileset1": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/suxro/source/repos/chestnut/packages/shared/src/assets/tilemaps/plains.json#tileset2": {
+            "scaleInDock": 1
+        },
+        "Level1.tmx": {
+            "scale": 0.46572265625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 509.9601593625498,
+                "y": 558.2721744600545
+            }
+        },
+        "MazeLevel1.tmx": {
+            "expandedGroupLayers": [
+                12,
+                14,
+                16
+            ],
+            "expandedObjectLayers": [
+                8
+            ],
+            "scale": 0.7291992187499999,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 307.87197000133926,
+                "y": 340.0991027186286
+            }
+        },
+        "Tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "maze-map.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 414.5,
+                "y": 253
+            }
+        },
+        "maze.tmx": {
+            "expandedGroupLayers": [
+                14,
+                16,
+                12
+            ],
+            "expandedObjectLayers": [
+                8
+            ],
+            "scale": 0.7291992187499999,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 512.2057051024508,
+                "y": 512.8913887772867
+            }
+        },
+        "tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.exportedFilePath": "C:/Users/suxro/source/repos/maze-godot/game/Scenes",
+    "last.imagePath": "C:/Users/suxro/source/repos/maze-tilemap",
+    "map.height": 32,
+    "map.lastUsedExportFilter": "Godot 4 Scene files (*.tscn)",
+    "map.lastUsedFormat": "tmx",
+    "map.width": 32,
+    "openFiles": [
+        "Level1.tmx",
+        "tileset.tsx"
+    ],
+    "project": "Maze.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "Level1.tmx",
+        "tileset.tsx",
+        "Tileset.tsx",
+        "MazeLevel1.tmx",
+        "C:/Users/suxro/source/repos/chestnut/packages/shared/src/assets/tilemaps/plains.json",
+        "maze.tmx",
+        "maze-map.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}
