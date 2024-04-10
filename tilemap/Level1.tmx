@@ -5,6 +5,9 @@
  </editorsettings>
  <tileset firstgid="1" source="Tileset.tsx"/>
  <layer id="1" name="Ground" width="32" height="32">
+  <properties>
+   <property name="zIndex" type="int" value="0"/>
+  </properties>
   <data encoding="csv">
 281,281,312,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,282,
 281,282,282,312,281,281,282,282,312,312,312,312,312,312,312,312,312,312,312,312,281,282,282,282,282,282,282,282,282,282,282,282,
@@ -43,7 +46,7 @@
  <group id="16" name="Boundaries">
   <layer id="2" name="Boundaries1" width="32" height="32">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="zIndex" type="int" value="3"/>
    </properties>
    <data encoding="csv">
 469,529,530,529,530,529,530,529,530,529,530,529,530,529,530,529,530,529,530,529,530,529,530,529,530,529,530,529,530,529,530,466,
@@ -82,7 +85,7 @@
   </layer>
   <layer id="15" name="Boundaries2" width="32" height="32">
    <properties>
-    <property name="collision" type="bool" value="true"/>
+    <property name="zIndex" type="int" value="3"/>
    </properties>
    <data encoding="csv">
 468,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,468,
@@ -122,6 +125,9 @@
  </group>
  <group id="12" name="Rocks">
   <layer id="10" name="Rocks2" width="32" height="32">
+   <properties>
+    <property name="zIndex" type="int" value="2"/>
+   </properties>
    <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -158,6 +164,9 @@
 </data>
   </layer>
   <layer id="9" name="Rocks1" width="32" height="32">
+   <properties>
+    <property name="zIndex" type="int" value="2"/>
+   </properties>
    <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -196,6 +205,9 @@
  </group>
  <group id="14" name="Trees">
   <layer id="13" name="Trees2" width="32" height="32">
+   <properties>
+    <property name="zIndex" type="int" value="2"/>
+   </properties>
    <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -232,6 +244,9 @@
 </data>
   </layer>
   <layer id="4" name="Trees1" width="32" height="32">
+   <properties>
+    <property name="zIndex" type="int" value="2"/>
+   </properties>
    <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

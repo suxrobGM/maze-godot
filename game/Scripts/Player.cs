@@ -1,17 +1,22 @@
-using Godot;
 using System;
+using Godot;
 
 namespace Maze.Scripts;
 
-public partial class Player : Node
+public partial class Player : CharacterBody2D
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
+	[Export]
+	public int Speed { get; set; } = 400;
+
+	public override void _PhysicsProcess(double delta)
 	{
+		SetVelocity();
+		MoveAndSlide();
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	private void SetVelocity()
 	{
+		var inputDirection = Input.GetVector(InputActions.Left, InputActions.Right, InputActions.Up, InputActions.Down);
+		Velocity = inputDirection * Speed;
 	}
 }
