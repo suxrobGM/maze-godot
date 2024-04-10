@@ -2,8 +2,8 @@
 
 public static class InputActions
 {
-    public const string Left = "Left";
-    public const string Right = "Right";
-    public const string Up = "Up";
-    public const string Down = "Down";
+    public const string MoveLeft = "move_left";
+    public const string MoveRight = "move_right";
+    public const string MoveUp = "move_up";
+    public const string MoveDown = "move_down";
 }

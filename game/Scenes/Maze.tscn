@@ -2705,3 +2705,4 @@ layer_6/tile_data = PackedInt32Array(458775, 786432, 35, 458776, 851968, 35, 458
 
 [node name="CharacterBody" parent="." instance=ExtResource("2_qrwdg")]
 position = Vector2(87, 139)
+Speed = 200
