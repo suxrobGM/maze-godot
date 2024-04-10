@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset version="1.10" tiledversion="1.10.2" name="Tileset" tilewidth="32" tileheight="32" tilecount="1767" columns="31">
- <image source="Assets/tileset.png" width="992" height="1824"/>
+ <image source="../game/Assets/tileset.png" width="992" height="1824"/>
  <tile id="434">
   <objectgroup draworder="index" id="2">
    <object id="1" x="3" y="4" width="29" height="28"/>
@@ -297,4 +297,18 @@
    <object id="1" x="1" y="1" width="27.75" height="31"/>
   </objectgroup>
  </tile>
+ <wangsets>
+  <wangset name="RockRight" type="mixed" tile="468">
+   <wangcolor name="" color="#ff0000" tile="-1" probability="1"/>
+   <wangcolor name="" color="#00ff00" tile="-1" probability="1"/>
+   <wangtile tileid="468" wangid="1,1,1,1,1,2,2,2"/>
+   <wangtile tileid="499" wangid="1,1,1,1,1,2,2,2"/>
+  </wangset>
+  <wangset name="RockLeft" type="mixed" tile="465">
+   <wangcolor name="" color="#ff0000" tile="-1" probability="1"/>
+   <wangcolor name="" color="#00ff00" tile="-1" probability="1"/>
+   <wangtile tileid="465" wangid="1,2,2,2,1,1,1,1"/>
+   <wangtile tileid="496" wangid="1,2,2,2,1,1,1,1"/>
+  </wangset>
+ </wangsets>
 </tileset>

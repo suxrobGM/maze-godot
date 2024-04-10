@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="32" tileheight="32" infinite="0" nextlayerid="17" nextobjectid="8">
- <tileset firstgid="1" source="tileset.tsx"/>
+ <editorsettings>
+  <export target="../game/Scenes/Maze.tscn" format="tscn"/>
+ </editorsettings>
+ <tileset firstgid="1" source="Tileset.tsx"/>
  <layer id="1" name="Ground" width="32" height="32">
   <data encoding="csv">
 281,281,312,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,281,282,

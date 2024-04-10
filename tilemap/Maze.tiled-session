@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "tileset.tsx",
+    "activeFile": "Level1.tmx",
     "expandedProjectPaths": [
     ],
     "exportAsImage.drawObjectLabels": true,
@@ -28,8 +28,8 @@
             "scale": 0.46572265625,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 509.9601593625498,
-                "y": 558.2721744600545
+                "x": 798.7586496120782,
+                "y": 227.60327112602226
             }
         },
         "MazeLevel1.tmx": {
@@ -89,14 +89,14 @@
     "map.width": 32,
     "openFiles": [
         "Level1.tmx",
-        "tileset.tsx"
+        "Tileset.tsx"
     ],
     "project": "Maze.tiled-project",
     "property.type": "bool",
     "recentFiles": [
+        "Tileset.tsx",
         "Level1.tmx",
         "tileset.tsx",
-        "Tileset.tsx",
         "MazeLevel1.tmx",
         "C:/Users/suxro/source/repos/chestnut/packages/shared/src/assets/tilemaps/plains.json",
         "maze.tmx",
