@@ -11,4 +11,6 @@ public partial class Maze : TileMap
 	{
 		_grid = GridFactory.CreateGridFromTileMap(this);
 	}
+
+	public Grid GetGrid() => _grid;
 }

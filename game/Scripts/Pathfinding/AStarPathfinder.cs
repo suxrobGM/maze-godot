@@ -9,4 +9,9 @@ public class AStarPathfinder : IPathfinder
     {
         throw new System.NotImplementedException();
     }
+
+    public Vector2 GetNextPathPosition()
+    {
+        throw new System.NotImplementedException();
+    }
 }

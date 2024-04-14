@@ -25,7 +25,7 @@ public partial class Monster : CharacterBody2D
 	public PathfindingAlgorithmType PathfindingAlgorithm { get; set; } = PathfindingAlgorithmType.AStar;
 	
 	[Export]
-	public TileMap? TileMap { get; set; }
+	public Maze? Maze { get; set; }
 	
 	[Export]
 	public Player? Player { get; set; }
@@ -56,11 +56,16 @@ public partial class Monster : CharacterBody2D
 	
 	private void InitPathfinder()
 	{
+		if (Maze is null)
+		{
+			return;
+		}
+		
 		_pathfinder = PathfindingAlgorithm switch
 		{
 			PathfindingAlgorithmType.AStar => new AStarPathfinder(),
-			PathfindingAlgorithmType.Dijkstra => new DijkstraPathfinder(),
-			PathfindingAlgorithmType.Bfs => new BfsPathfinder(),
+			PathfindingAlgorithmType.Dijkstra => new DijkstraPathfinder(Maze.GetGrid()),
+			PathfindingAlgorithmType.Bfs => new BfsPathfinder(Maze.GetGrid()),
 			_ => _pathfinder
 		};
 	}
@@ -72,7 +77,9 @@ public partial class Monster : CharacterBody2D
 			return;
 		}
 		
-		var direction = ToLocal(_navigationAgent.GetNextPathPosition()).Normalized();
+		// var direction =  ToLocal(_navigationAgent.GetNextPathPosition()).Normalized();
+		var direction = ToLocal(_pathfinder.GetNextPathPosition()).Normalized();
+		GD.Print($"direction: {direction}");
 		Velocity = direction * Speed;
 		MoveAndSlide();
 	}
@@ -84,6 +91,8 @@ public partial class Monster : CharacterBody2D
 			return;
 		}
 		
-		_navigationAgent.TargetPosition = Player?.GlobalPosition ?? Vector2.Zero;
+		//_navigationAgent.TargetPosition = Player?.GlobalPosition ?? Vector2.Zero;
+		_pathfinder.FindPath(GlobalPosition, Player?.GlobalPosition ?? Vector2.Zero);
+		GD.Print("UpdateDestinationPath");
 	}
 }

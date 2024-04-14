@@ -14,14 +14,17 @@
 [node name="Player" parent="." instance=ExtResource("2_tjagd")]
 position = Vector2(87, 139)
 
-[node name="Monster1" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("3_u4pl1")]
+[node name="Monster1" parent="." node_paths=PackedStringArray("Maze", "Player") instance=ExtResource("3_u4pl1")]
 z_index = 2
 position = Vector2(266, 665)
+PathfindingAlgorithm = 1
+Maze = NodePath("../Level1")
 Player = NodePath("../Player")
 
-[node name="Monster2" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("4_q80xq")]
+[node name="Monster2" parent="." node_paths=PackedStringArray("Maze", "Player") instance=ExtResource("4_q80xq")]
 position = Vector2(589, 813)
 PathfindingAlgorithm = 1
+Maze = NodePath("../Level1")
 Player = NodePath("../Player")
 
 [node name="GoldGem1" parent="." instance=ExtResource("5_b4bai")]
