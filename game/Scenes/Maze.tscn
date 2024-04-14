@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://btjlsbdieitro"]
+[gd_scene load_steps=9 format=3 uid="uid://btjlsbdieitro"]
 
 [ext_resource type="PackedScene" uid="uid://cfffpuxqyp5dq" path="res://GameObjects/Player.tscn" id="2_qrwdg"]
 [ext_resource type="PackedScene" uid="uid://dktbn0urcuse1" path="res://GameObjects/RedMonster.tscn" id="3_5nq4e"]
 [ext_resource type="PackedScene" uid="uid://cwgr7uffi7p4f" path="res://GameObjects/YellowMonster.tscn" id="4_ldcwu"]
+[ext_resource type="PackedScene" uid="uid://d2ea1h83lgjbh" path="res://GameObjects/GoldGem.tscn" id="5_tgqtu"]
+[ext_resource type="PackedScene" uid="uid://plwpqjp3hydv" path="res://GameObjects/DiamondGem.tscn" id="6_v36y4"]
 [ext_resource type="Texture2D" uid="uid://do7ubpvnshpxu" path="res://Assets/tileset.png" id="Tileset"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0"]
@@ -2718,3 +2720,15 @@ position = Vector2(589, 813)
 PathfindingAlgorithm = 1
 TileMap = NodePath("..")
 Player = NodePath("../Player")
+
+[node name="GoldGem" parent="." instance=ExtResource("5_tgqtu")]
+position = Vector2(206, 433)
+
+[node name="DiamondGem" parent="." instance=ExtResource("6_v36y4")]
+position = Vector2(415, 514)
+
+[node name="DiamondGem2" parent="." instance=ExtResource("6_v36y4")]
+position = Vector2(857, 713)
+
+[node name="GoldGem2" parent="." instance=ExtResource("5_tgqtu")]
+position = Vector2(151, 746)

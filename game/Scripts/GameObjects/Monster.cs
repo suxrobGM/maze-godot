@@ -5,10 +5,12 @@ namespace Maze.Scripts.GameObjects;
 
 public partial class Monster : CharacterBody2D
 {
+	private AnimatedSprite2D? _animatedSprite;
+	
 	#region Parameters
 
 	[Export]
-	public MonsterType MonsterType { get; set; }
+	public MonsterType Type { get; set; }
 	
 	[Export]
 	public bool CanMove { get; set; } = true;
@@ -28,6 +30,6 @@ public partial class Monster : CharacterBody2D
 
 	public override void _Ready()
 	{
-		
+		_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 	}
 }

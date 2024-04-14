@@ -252,7 +252,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_8qoxy"]
 radius = 16.0312
 
-[node name="Monster" type="CharacterBody2D"]
+[node name="RedMonster" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_phi0v")
 
