@@ -12,4 +12,8 @@ public class Node
         Position = position;
         Cost = cost;
     }
+    
+    public override string ToString() {
+        return $"Node(Position: {Position}, Cost: {Cost})";
+    }
 }

@@ -1,3 +1,37 @@
-[gd_scene format=3 uid="uid://fn84tracrjhm"]
+[gd_scene load_steps=7 format=3 uid="uid://fn84tracrjhm"]
 
-[node name="MazeWorld" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://d2w64r8ro8fqc" path="res://Maps/Level1.tscn" id="1_tvdsx"]
+[ext_resource type="PackedScene" uid="uid://cfffpuxqyp5dq" path="res://GameObjects/Player.tscn" id="2_tjagd"]
+[ext_resource type="PackedScene" uid="uid://dktbn0urcuse1" path="res://GameObjects/RedMonster.tscn" id="3_u4pl1"]
+[ext_resource type="PackedScene" uid="uid://cwgr7uffi7p4f" path="res://GameObjects/YellowMonster.tscn" id="4_q80xq"]
+[ext_resource type="PackedScene" uid="uid://d2ea1h83lgjbh" path="res://GameObjects/GoldGem.tscn" id="5_b4bai"]
+[ext_resource type="PackedScene" uid="uid://plwpqjp3hydv" path="res://GameObjects/DiamondGem.tscn" id="6_0m7w1"]
+
+[node name="World" type="Node2D"]
+
+[node name="Level1" parent="." instance=ExtResource("1_tvdsx")]
+
+[node name="Player" parent="." instance=ExtResource("2_tjagd")]
+position = Vector2(87, 139)
+
+[node name="Monster1" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("3_u4pl1")]
+z_index = 2
+position = Vector2(266, 665)
+Player = NodePath("../Player")
+
+[node name="Monster2" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("4_q80xq")]
+position = Vector2(589, 813)
+PathfindingAlgorithm = 1
+Player = NodePath("../Player")
+
+[node name="GoldGem1" parent="." instance=ExtResource("5_b4bai")]
+position = Vector2(206, 433)
+
+[node name="DiamondGem1" parent="." instance=ExtResource("6_0m7w1")]
+position = Vector2(415, 514)
+
+[node name="DiamondGem2" parent="." instance=ExtResource("6_0m7w1")]
+position = Vector2(857, 713)
+
+[node name="GoldGem2" parent="." instance=ExtResource("5_b4bai")]
+position = Vector2(151, 746)
