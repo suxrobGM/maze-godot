@@ -1,0 +1,266 @@
+[gd_scene load_steps=60 format=3 uid="uid://cwgr7uffi7p4f"]
+
+[ext_resource type="Script" path="res://Scripts/GameObjects/Monster.cs" id="1_b60rw"]
+[ext_resource type="Texture2D" uid="uid://cdefjp1ahj2g7" path="res://Assets/Textures/YellowMonster/walkB/enemy02_walkB_0000.png" id="2_eyukc"]
+[ext_resource type="Texture2D" uid="uid://dy6f7bxvl5l0l" path="res://Assets/Textures/YellowMonster/walkB/enemy02_walkB_0001.png" id="3_rnxg1"]
+[ext_resource type="Texture2D" uid="uid://cy74jw3jj7aey" path="res://Assets/Textures/YellowMonster/walkB/enemy02_walkB_0002.png" id="4_awtaj"]
+[ext_resource type="Texture2D" uid="uid://byhlmln1qivsd" path="res://Assets/Textures/YellowMonster/walkB/enemy02_walkB_0003.png" id="5_mcoew"]
+[ext_resource type="Texture2D" uid="uid://dmkd6ykkx8vy8" path="res://Assets/Textures/YellowMonster/walkB/enemy02_walkB_0004.png" id="6_m4xyu"]
+[ext_resource type="Texture2D" uid="uid://dm2pjmmc2oton" path="res://Assets/Textures/YellowMonster/walkB/enemy02_walkB_0005.png" id="7_vc3dj"]
+[ext_resource type="Texture2D" uid="uid://cah7plrkpr83v" path="res://Assets/Textures/YellowMonster/walkB/enemy02_walkB_0006.png" id="8_knwwn"]
+[ext_resource type="Texture2D" uid="uid://dao8pc7s2qm5w" path="res://Assets/Textures/YellowMonster/walkB/enemy02_walkB_0007.png" id="9_macfu"]
+[ext_resource type="Texture2D" uid="uid://bh63oxlkd0xm3" path="res://Assets/Textures/YellowMonster/walkB/enemy02_walkB_0008.png" id="10_8ygjb"]
+[ext_resource type="Texture2D" uid="uid://crqvyjajlr40v" path="res://Assets/Textures/YellowMonster/walkB/enemy02_walkB_0009.png" id="11_cyltx"]
+[ext_resource type="Texture2D" uid="uid://cjkl4rxciejqt" path="res://Assets/Textures/YellowMonster/walkB/enemy02_walkB_0010.png" id="12_pfb58"]
+[ext_resource type="Texture2D" uid="uid://2rx076tmjp0t" path="res://Assets/Textures/YellowMonster/walkB/enemy02_walkB_0011.png" id="13_0ur5i"]
+[ext_resource type="Texture2D" uid="uid://cah441w4af3ks" path="res://Assets/Textures/YellowMonster/walkB/enemy02_walkB_0012.png" id="14_h5gvj"]
+[ext_resource type="Texture2D" uid="uid://2rokvkjatx8x" path="res://Assets/Textures/YellowMonster/walkB/enemy02_walkB_0013.png" id="15_6b0ox"]
+[ext_resource type="Texture2D" uid="uid://b48pubsbg444b" path="res://Assets/Textures/YellowMonster/walkC/enemy02_walkC_0000.png" id="16_8vg1a"]
+[ext_resource type="Texture2D" uid="uid://cjjbfohymub41" path="res://Assets/Textures/YellowMonster/walkC/enemy02_walkC_0001.png" id="17_pm0eq"]
+[ext_resource type="Texture2D" uid="uid://tmdn6veqrrl7" path="res://Assets/Textures/YellowMonster/walkC/enemy02_walkC_0002.png" id="18_cic8b"]
+[ext_resource type="Texture2D" uid="uid://c37iv343gyh7q" path="res://Assets/Textures/YellowMonster/walkC/enemy02_walkC_0003.png" id="19_hwvnh"]
+[ext_resource type="Texture2D" uid="uid://dlqrvx5eaysr7" path="res://Assets/Textures/YellowMonster/walkC/enemy02_walkC_0004.png" id="20_bou0s"]
+[ext_resource type="Texture2D" uid="uid://b517pcu2mhr0k" path="res://Assets/Textures/YellowMonster/walkC/enemy02_walkC_0005.png" id="21_b4dxv"]
+[ext_resource type="Texture2D" uid="uid://b4ydxofss0s1t" path="res://Assets/Textures/YellowMonster/walkC/enemy02_walkC_0006.png" id="22_jwl4u"]
+[ext_resource type="Texture2D" uid="uid://brgiuid7nsk1v" path="res://Assets/Textures/YellowMonster/walkC/enemy02_walkC_0007.png" id="23_tfaqh"]
+[ext_resource type="Texture2D" uid="uid://d2aireyjbusyj" path="res://Assets/Textures/YellowMonster/walkC/enemy02_walkC_0008.png" id="24_vbfes"]
+[ext_resource type="Texture2D" uid="uid://bxaohqwnwjm58" path="res://Assets/Textures/YellowMonster/walkC/enemy02_walkC_0009.png" id="25_vhin1"]
+[ext_resource type="Texture2D" uid="uid://brwb4pfrhvh0q" path="res://Assets/Textures/YellowMonster/walkC/enemy02_walkC_0010.png" id="26_gm5sa"]
+[ext_resource type="Texture2D" uid="uid://ciwv458iycdb2" path="res://Assets/Textures/YellowMonster/walkC/enemy02_walkC_0011.png" id="27_3vy45"]
+[ext_resource type="Texture2D" uid="uid://vi8yq7jpl8yc" path="res://Assets/Textures/YellowMonster/walkC/enemy02_walkC_0012.png" id="28_praob"]
+[ext_resource type="Texture2D" uid="uid://kfbc556o1rbp" path="res://Assets/Textures/YellowMonster/walkC/enemy02_walkC_0013.png" id="29_p033b"]
+[ext_resource type="Texture2D" uid="uid://bkt1v0jbgekx7" path="res://Assets/Textures/YellowMonster/walkA/enemy02_walkA_0000.png" id="30_3jsuf"]
+[ext_resource type="Texture2D" uid="uid://6wvmu514le4j" path="res://Assets/Textures/YellowMonster/walkA/enemy02_walkA_0001.png" id="31_5nh0h"]
+[ext_resource type="Texture2D" uid="uid://bya1h4cw0lrto" path="res://Assets/Textures/YellowMonster/walkA/enemy02_walkA_0002.png" id="32_2ci5x"]
+[ext_resource type="Texture2D" uid="uid://d1jtdcelscvch" path="res://Assets/Textures/YellowMonster/walkA/enemy02_walkA_0003.png" id="33_2l2hp"]
+[ext_resource type="Texture2D" uid="uid://c0i15a5qlaixh" path="res://Assets/Textures/YellowMonster/walkA/enemy02_walkA_0004.png" id="34_7s6u6"]
+[ext_resource type="Texture2D" uid="uid://ccalvgcf7r1qh" path="res://Assets/Textures/YellowMonster/walkA/enemy02_walkA_0005.png" id="35_lrakc"]
+[ext_resource type="Texture2D" uid="uid://b0ni04u12fre3" path="res://Assets/Textures/YellowMonster/walkA/enemy02_walkA_0006.png" id="36_evosh"]
+[ext_resource type="Texture2D" uid="uid://f3muqro6y3qu" path="res://Assets/Textures/YellowMonster/walkA/enemy02_walkA_0007.png" id="37_srbyh"]
+[ext_resource type="Texture2D" uid="uid://bvc6t4bcg1rlj" path="res://Assets/Textures/YellowMonster/walkA/enemy02_walkA_0008.png" id="38_bsyok"]
+[ext_resource type="Texture2D" uid="uid://cklll1rw0t1oe" path="res://Assets/Textures/YellowMonster/walkA/enemy02_walkA_0009.png" id="39_1kelv"]
+[ext_resource type="Texture2D" uid="uid://byob2ewcy4eu7" path="res://Assets/Textures/YellowMonster/walkA/enemy02_walkA_0010.png" id="40_ijt4w"]
+[ext_resource type="Texture2D" uid="uid://dr30ccc3p0alt" path="res://Assets/Textures/YellowMonster/walkA/enemy02_walkA_0011.png" id="41_35qpn"]
+[ext_resource type="Texture2D" uid="uid://d38dtk4feuotd" path="res://Assets/Textures/YellowMonster/walkA/enemy02_walkA_0012.png" id="42_f8lwb"]
+[ext_resource type="Texture2D" uid="uid://bh0d6u82mr3cj" path="res://Assets/Textures/YellowMonster/walkA/enemy02_walkA_0013.png" id="43_mvjnj"]
+[ext_resource type="Texture2D" uid="uid://cgeq48f5sco17" path="res://Assets/Textures/YellowMonster/walkD/enemy02_walkD_0000.png" id="44_sqdac"]
+[ext_resource type="Texture2D" uid="uid://trj2k87byycc" path="res://Assets/Textures/YellowMonster/walkD/enemy02_walkD_0001.png" id="45_rjfhx"]
+[ext_resource type="Texture2D" uid="uid://buwuhlc72k8qs" path="res://Assets/Textures/YellowMonster/walkD/enemy02_walkD_0002.png" id="46_tdmld"]
+[ext_resource type="Texture2D" uid="uid://b2y5ca2a2xbwc" path="res://Assets/Textures/YellowMonster/walkD/enemy02_walkD_0003.png" id="47_54jye"]
+[ext_resource type="Texture2D" uid="uid://btjtvljft450r" path="res://Assets/Textures/YellowMonster/walkD/enemy02_walkD_0004.png" id="48_3jdw3"]
+[ext_resource type="Texture2D" uid="uid://vm3hhitk4ug1" path="res://Assets/Textures/YellowMonster/walkD/enemy02_walkD_0005.png" id="49_vbn17"]
+[ext_resource type="Texture2D" uid="uid://dtpxytf1je6sn" path="res://Assets/Textures/YellowMonster/walkD/enemy02_walkD_0006.png" id="50_2oeb2"]
+[ext_resource type="Texture2D" uid="uid://dggcnrl4r6un1" path="res://Assets/Textures/YellowMonster/walkD/enemy02_walkD_0007.png" id="51_p52mf"]
+[ext_resource type="Texture2D" uid="uid://sjmcnk1dqia2" path="res://Assets/Textures/YellowMonster/walkD/enemy02_walkD_0008.png" id="52_xeqwx"]
+[ext_resource type="Texture2D" uid="uid://cq0hlncu6tb7s" path="res://Assets/Textures/YellowMonster/walkD/enemy02_walkD_0009.png" id="53_1idtk"]
+[ext_resource type="Texture2D" uid="uid://bl5re1j2r1m3u" path="res://Assets/Textures/YellowMonster/walkD/enemy02_walkD_0010.png" id="54_yx5no"]
+[ext_resource type="Texture2D" uid="uid://7wg4fdh4ujvh" path="res://Assets/Textures/YellowMonster/walkD/enemy02_walkD_0011.png" id="55_4v7l0"]
+[ext_resource type="Texture2D" uid="uid://b8nctdilcj6pe" path="res://Assets/Textures/YellowMonster/walkD/enemy02_walkD_0012.png" id="56_rmim6"]
+[ext_resource type="Texture2D" uid="uid://cra3x8h2c80ik" path="res://Assets/Textures/YellowMonster/walkD/enemy02_walkD_0013.png" id="57_kqaw0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wtjh7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eyukc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rnxg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_awtaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mcoew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_m4xyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vc3dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_knwwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_macfu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8ygjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cyltx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_pfb58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_0ur5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_h5gvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_6b0ox")
+}],
+"loop": true,
+"name": &"walk_east",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_8vg1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pm0eq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_cic8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_hwvnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_bou0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_b4dxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_jwl4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_tfaqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_vbfes")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_vhin1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_gm5sa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_3vy45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_praob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_p033b")
+}],
+"loop": true,
+"name": &"walk_north",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_3jsuf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_5nh0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_2ci5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_2l2hp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_7s6u6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_lrakc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_evosh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_srbyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_bsyok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_1kelv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_ijt4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_35qpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_f8lwb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_mvjnj")
+}],
+"loop": true,
+"name": &"walk_south",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_sqdac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_rjfhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_tdmld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_54jye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_3jdw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_vbn17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_2oeb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_p52mf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_xeqwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_1idtk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_yx5no")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_4v7l0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_rmim6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_kqaw0")
+}],
+"loop": true,
+"name": &"walk_west",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8qoxy"]
+radius = 20.0
+
+[node name="Monster" type="CharacterBody2D"]
+z_index = 1
+script = ExtResource("1_b60rw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_wtjh7")
+animation = &"walk_south"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_8qoxy")

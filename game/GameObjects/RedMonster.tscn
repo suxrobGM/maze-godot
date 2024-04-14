@@ -1,0 +1,266 @@
+[gd_scene load_steps=60 format=3 uid="uid://dktbn0urcuse1"]
+
+[ext_resource type="Script" path="res://Scripts/GameObjects/Monster.cs" id="1_phi0v"]
+[ext_resource type="Texture2D" uid="uid://bvlxhlfdmpn7m" path="res://Assets/Textures/RedMonster/walkB/enemy_walkB_0000.png" id="2_y26o3"]
+[ext_resource type="Texture2D" uid="uid://b4x8jovs7i0lw" path="res://Assets/Textures/RedMonster/walkB/enemy_walkB_0001.png" id="3_b2jsi"]
+[ext_resource type="Texture2D" uid="uid://deb1m2cqe6psa" path="res://Assets/Textures/RedMonster/walkB/enemy_walkB_0002.png" id="4_wbq0c"]
+[ext_resource type="Texture2D" uid="uid://dn7owraej7iwj" path="res://Assets/Textures/RedMonster/walkB/enemy_walkB_0003.png" id="5_dggjk"]
+[ext_resource type="Texture2D" uid="uid://dr0fwgrf6kw6v" path="res://Assets/Textures/RedMonster/walkB/enemy_walkB_0004.png" id="6_r8rho"]
+[ext_resource type="Texture2D" uid="uid://cmsxv7fi1c3ol" path="res://Assets/Textures/RedMonster/walkB/enemy_walkB_0005.png" id="7_a2snp"]
+[ext_resource type="Texture2D" uid="uid://cp52rip252wv" path="res://Assets/Textures/RedMonster/walkB/enemy_walkB_0006.png" id="8_3gkpu"]
+[ext_resource type="Texture2D" uid="uid://ct0rbmtoexsan" path="res://Assets/Textures/RedMonster/walkB/enemy_walkB_0007.png" id="9_j2k81"]
+[ext_resource type="Texture2D" uid="uid://6kewteywwmo" path="res://Assets/Textures/RedMonster/walkB/enemy_walkB_0008.png" id="10_ojcj2"]
+[ext_resource type="Texture2D" uid="uid://d2ri6p8t4uatu" path="res://Assets/Textures/RedMonster/walkB/enemy_walkB_0009.png" id="11_rpmes"]
+[ext_resource type="Texture2D" uid="uid://f3r25kj8ordb" path="res://Assets/Textures/RedMonster/walkB/enemy_walkB_0010.png" id="12_kr57t"]
+[ext_resource type="Texture2D" uid="uid://djatbsuhm7j1q" path="res://Assets/Textures/RedMonster/walkB/enemy_walkB_0011.png" id="13_a2c3i"]
+[ext_resource type="Texture2D" uid="uid://8mmaxxo3u5kj" path="res://Assets/Textures/RedMonster/walkB/enemy_walkB_0012.png" id="14_51ujn"]
+[ext_resource type="Texture2D" uid="uid://dyy8hqqexh326" path="res://Assets/Textures/RedMonster/walkB/enemy_walkB_0013.png" id="15_y3g7j"]
+[ext_resource type="Texture2D" uid="uid://cl5g7nuxgy8dk" path="res://Assets/Textures/RedMonster/walkC/enemy_walkC_0000.png" id="16_dwo83"]
+[ext_resource type="Texture2D" uid="uid://6spun5d3s6sr" path="res://Assets/Textures/RedMonster/walkC/enemy_walkC_0001.png" id="17_3nifd"]
+[ext_resource type="Texture2D" uid="uid://bh7xy7qc0wpgj" path="res://Assets/Textures/RedMonster/walkC/enemy_walkC_0002.png" id="18_f201e"]
+[ext_resource type="Texture2D" uid="uid://b8byjkcoemgjd" path="res://Assets/Textures/RedMonster/walkC/enemy_walkC_0003.png" id="19_jjvh3"]
+[ext_resource type="Texture2D" uid="uid://y8bwpqvl5uq0" path="res://Assets/Textures/RedMonster/walkC/enemy_walkC_0004.png" id="20_uga1s"]
+[ext_resource type="Texture2D" uid="uid://h22fgvr2hsa3" path="res://Assets/Textures/RedMonster/walkC/enemy_walkC_0005.png" id="21_s148p"]
+[ext_resource type="Texture2D" uid="uid://dyvtbckkammgm" path="res://Assets/Textures/RedMonster/walkC/enemy_walkC_0006.png" id="22_xgdiu"]
+[ext_resource type="Texture2D" uid="uid://cmybn0tqvtvds" path="res://Assets/Textures/RedMonster/walkC/enemy_walkC_0007.png" id="23_x4yts"]
+[ext_resource type="Texture2D" uid="uid://ddqbcjpaoeefw" path="res://Assets/Textures/RedMonster/walkC/enemy_walkC_0008.png" id="24_nr22u"]
+[ext_resource type="Texture2D" uid="uid://1gox75twooj0" path="res://Assets/Textures/RedMonster/walkC/enemy_walkC_0009.png" id="25_jdxi2"]
+[ext_resource type="Texture2D" uid="uid://dcujd1i1ahnv6" path="res://Assets/Textures/RedMonster/walkC/enemy_walkC_0010.png" id="26_xrph8"]
+[ext_resource type="Texture2D" uid="uid://dxctx0eec8qpb" path="res://Assets/Textures/RedMonster/walkC/enemy_walkC_0011.png" id="27_x0bvi"]
+[ext_resource type="Texture2D" uid="uid://b6mnrfo5yqmkm" path="res://Assets/Textures/RedMonster/walkC/enemy_walkC_0012.png" id="28_62w1w"]
+[ext_resource type="Texture2D" uid="uid://c3ikyshx7n61s" path="res://Assets/Textures/RedMonster/walkC/enemy_walkC_0013.png" id="29_rt3rm"]
+[ext_resource type="Texture2D" uid="uid://ba64v48weln2q" path="res://Assets/Textures/RedMonster/walkA/enemy_walkA_0000.png" id="30_vp3ab"]
+[ext_resource type="Texture2D" uid="uid://bpw3ftxfsuiv8" path="res://Assets/Textures/RedMonster/walkA/enemy_walkA_0001.png" id="31_mp7qr"]
+[ext_resource type="Texture2D" uid="uid://60ugmrs7rvww" path="res://Assets/Textures/RedMonster/walkA/enemy_walkA_0002.png" id="32_sw6oq"]
+[ext_resource type="Texture2D" uid="uid://cfjifgvrfkjw2" path="res://Assets/Textures/RedMonster/walkA/enemy_walkA_0003.png" id="33_1ccbr"]
+[ext_resource type="Texture2D" uid="uid://ddhgdd7yyk48o" path="res://Assets/Textures/RedMonster/walkA/enemy_walkA_0004.png" id="34_3lked"]
+[ext_resource type="Texture2D" uid="uid://dk4ow04qvg16d" path="res://Assets/Textures/RedMonster/walkA/enemy_walkA_0005.png" id="35_fwrhp"]
+[ext_resource type="Texture2D" uid="uid://cru4gcaswallt" path="res://Assets/Textures/RedMonster/walkA/enemy_walkA_0006.png" id="36_oim1t"]
+[ext_resource type="Texture2D" uid="uid://cfywmowfw46e1" path="res://Assets/Textures/RedMonster/walkA/enemy_walkA_0007.png" id="37_33dix"]
+[ext_resource type="Texture2D" uid="uid://cefmd2qv4jnrn" path="res://Assets/Textures/RedMonster/walkA/enemy_walkA_0008.png" id="38_233eq"]
+[ext_resource type="Texture2D" uid="uid://dx1qytnwbgo0t" path="res://Assets/Textures/RedMonster/walkA/enemy_walkA_0009.png" id="39_wk5ut"]
+[ext_resource type="Texture2D" uid="uid://dgrox56kquaqu" path="res://Assets/Textures/RedMonster/walkA/enemy_walkA_0010.png" id="40_ceb2g"]
+[ext_resource type="Texture2D" uid="uid://ds6hhfyrhpj3a" path="res://Assets/Textures/RedMonster/walkA/enemy_walkA_0011.png" id="41_igmnt"]
+[ext_resource type="Texture2D" uid="uid://cu1fgm55hfg4i" path="res://Assets/Textures/RedMonster/walkA/enemy_walkA_0012.png" id="42_hj68c"]
+[ext_resource type="Texture2D" uid="uid://dwrklpu8vjtj4" path="res://Assets/Textures/RedMonster/walkA/enemy_walkA_0013.png" id="43_upt1v"]
+[ext_resource type="Texture2D" uid="uid://b1t4i1fdixdq3" path="res://Assets/Textures/RedMonster/walkD/enemy_walkD_0000.png" id="44_blt1k"]
+[ext_resource type="Texture2D" uid="uid://c6a24vkbip3p" path="res://Assets/Textures/RedMonster/walkD/enemy_walkD_0001.png" id="45_t3ira"]
+[ext_resource type="Texture2D" uid="uid://dixwq078vjrho" path="res://Assets/Textures/RedMonster/walkD/enemy_walkD_0002.png" id="46_xctfj"]
+[ext_resource type="Texture2D" uid="uid://bfu3vqkcw0dm5" path="res://Assets/Textures/RedMonster/walkD/enemy_walkD_0003.png" id="47_8hjop"]
+[ext_resource type="Texture2D" uid="uid://di77iwyoncjhx" path="res://Assets/Textures/RedMonster/walkD/enemy_walkD_0004.png" id="48_ipnx8"]
+[ext_resource type="Texture2D" uid="uid://cmxl5poa5hdpj" path="res://Assets/Textures/RedMonster/walkD/enemy_walkD_0005.png" id="49_0gwhs"]
+[ext_resource type="Texture2D" uid="uid://f7osdewn34sf" path="res://Assets/Textures/RedMonster/walkD/enemy_walkD_0006.png" id="50_g3f4x"]
+[ext_resource type="Texture2D" uid="uid://b5p6yybmduqsa" path="res://Assets/Textures/RedMonster/walkD/enemy_walkD_0007.png" id="51_3md71"]
+[ext_resource type="Texture2D" uid="uid://bfxkrwov4criy" path="res://Assets/Textures/RedMonster/walkD/enemy_walkD_0008.png" id="52_d665w"]
+[ext_resource type="Texture2D" uid="uid://bnh0o5csiro1p" path="res://Assets/Textures/RedMonster/walkD/enemy_walkD_0009.png" id="53_7fbg5"]
+[ext_resource type="Texture2D" uid="uid://bbe4xj0i5ehn" path="res://Assets/Textures/RedMonster/walkD/enemy_walkD_0010.png" id="54_3a10r"]
+[ext_resource type="Texture2D" uid="uid://bhxa0u724enwk" path="res://Assets/Textures/RedMonster/walkD/enemy_walkD_0011.png" id="55_eiuo8"]
+[ext_resource type="Texture2D" uid="uid://cpebq2mm0ciat" path="res://Assets/Textures/RedMonster/walkD/enemy_walkD_0012.png" id="56_u0s0r"]
+[ext_resource type="Texture2D" uid="uid://dd8cyletoi6y5" path="res://Assets/Textures/RedMonster/walkD/enemy_walkD_0013.png" id="57_jm38k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wtjh7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y26o3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b2jsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wbq0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dggjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_r8rho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_a2snp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3gkpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j2k81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ojcj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rpmes")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kr57t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_a2c3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_51ujn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_y3g7j")
+}],
+"loop": true,
+"name": &"walk_east",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_dwo83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3nifd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_f201e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jjvh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_uga1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_s148p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_xgdiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_x4yts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_nr22u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_jdxi2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_xrph8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_x0bvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_62w1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_rt3rm")
+}],
+"loop": true,
+"name": &"walk_north",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_vp3ab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_mp7qr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_sw6oq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_1ccbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_3lked")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_fwrhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_oim1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_33dix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_233eq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_wk5ut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_ceb2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_igmnt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_hj68c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_upt1v")
+}],
+"loop": true,
+"name": &"walk_south",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_blt1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_t3ira")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_xctfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_8hjop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_ipnx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_0gwhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_g3f4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_3md71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_d665w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_7fbg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_3a10r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_eiuo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_u0s0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_jm38k")
+}],
+"loop": true,
+"name": &"walk_west",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8qoxy"]
+radius = 16.0312
+
+[node name="Monster" type="CharacterBody2D"]
+z_index = 1
+script = ExtResource("1_phi0v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_wtjh7")
+animation = &"walk_south"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_8qoxy")

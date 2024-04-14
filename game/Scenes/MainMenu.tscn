@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cdlfj4sa653gf"]
 
-[ext_resource type="Script" path="res://Scripts/MainMenu.cs" id="1_ts0ia"]
+[ext_resource type="Script" path="res://Scripts/UI/MainMenu.cs" id="1_ay2g6"]
 [ext_resource type="Theme" uid="uid://c6bkcl5m2eyi3" path="res://UI/Theme1.tres" id="1_udrmy"]
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("StartButton", "ExitButton")]
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ts0ia")
+script = ExtResource("1_ay2g6")
 StartButton = NodePath("CenterContainer/Panel/VBoxContainer/StartButton")
 ExitButton = NodePath("CenterContainer/Panel/VBoxContainer/ExitButton")
 
