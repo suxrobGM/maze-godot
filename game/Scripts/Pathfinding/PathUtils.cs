@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Godot;
 
 namespace Maze.Scripts.Pathfinding;
 
-public static class PathfinderUtils
+public static class PathUtils
 {
-    public static ICollection<Vector2> ConstructPath(Dictionary<Vector2, Vector2> path, Vector2 destination)
+    public static IEnumerable<Vector2> ConstructPath(Dictionary<Vector2, Vector2> path, Vector2 destination)
     {
         var sequence = new Stack<Vector2>();
         var step = destination;
@@ -18,6 +17,15 @@ public static class PathfinderUtils
         }
         
         sequence.Push(step);  // Push the start position
-        return sequence.ToList();
+        return sequence;
+    }
+    
+    public static void PrintPath(IEnumerable<Vector2> path)
+    {
+        foreach (var point in path)
+        {
+            GD.PrintRaw($"{point}->");
+        }
+        GD.Print("\n");
     }
 }

@@ -275,3 +275,4 @@ path_postprocessing = 1
 debug_enabled = true
 
 [node name="Timer" type="Timer" parent="Navigation"]
+wait_time = 3.0

@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Godot;
 
 namespace Maze.Scripts.Pathfinding;
 
 public class DijkstraPathfinder : IPathfinder
 {
-    private Grid _grid;
-    private Queue<Vector2> _lastPath = new();
+    private readonly Grid _grid;
+    private readonly Queue<Vector2> _lastPath = new();
 
     public DijkstraPathfinder(Grid grid)
     {
@@ -16,32 +17,33 @@ public class DijkstraPathfinder : IPathfinder
     public IEnumerable<Vector2> FindPath(Vector2 start, Vector2 destination)
     {
         _lastPath.Clear();
-        var startNode = _grid.GetNodeFromGlobalPosition(start);
-        var destinationNode = _grid.GetNodeFromGlobalPosition(destination);
+        var startNode = _grid.GetNodeFromWorldPosition(start);
+        var destinationNode = _grid.GetNodeFromWorldPosition(destination);
         var priorityQueue = new PriorityQueue<Node, int>();
         var distances = new Dictionary<Vector2, int>();
         var previous = new Dictionary<Vector2, Vector2>();
 
         priorityQueue.Enqueue(startNode, 0);
-        distances[startNode.Position] = 0;
+        distances[startNode.GridPosition] = 0;
 
         while (priorityQueue.Count > 0)
         {
-            var current = priorityQueue.Dequeue();
+            var currentNode = priorityQueue.Dequeue();
 
-            if (current.Position == destinationNode.Position)
+            if (currentNode.GridPosition == destinationNode.GridPosition)
             {
-                var path = PathfinderUtils.ConstructPath(previous, destinationNode.Position);
+                var paths = PathUtils.ConstructPath(previous, destinationNode.GridPosition).ToList();
                 
-                foreach (var pos in path)
+                foreach (var path in paths)
                 {
-                    _lastPath.Enqueue(pos);
+                    _lastPath.Enqueue(path);
                 }
                     
-                return path;
+                return paths;
             }
             
-            foreach (var neighbor in _grid.GetNeighbors(current))
+            // Explore neighbors
+            foreach (var neighbor in _grid.GetNeighbors(currentNode))
             {
                 // Skip unwalkable nodes
                 if (neighbor.Cost == 0)
@@ -49,13 +51,13 @@ public class DijkstraPathfinder : IPathfinder
                     continue; 
                 }
 
-                var newCost = distances[current.Position] + neighbor.Cost;
+                var newCost = distances[currentNode.GridPosition] + neighbor.Cost;
                 
-                if (!distances.ContainsKey(neighbor.Position) || newCost < distances[neighbor.Position])
+                if (!distances.ContainsKey(neighbor.GridPosition) || newCost < distances[neighbor.GridPosition])
                 {
-                    distances[neighbor.Position] = newCost;
+                    distances[neighbor.GridPosition] = newCost;
                     priorityQueue.Enqueue(neighbor, newCost);
-                    previous[neighbor.Position] = current.Position;
+                    previous[neighbor.GridPosition] = currentNode.GridPosition;
                 }
             }
         }

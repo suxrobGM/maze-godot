@@ -21,26 +21,27 @@ public class BfsPathfinder : IPathfinder
         var path = new Dictionary<Vector2, Vector2>();
 
         queue.Enqueue(startNode);
-        visited.Add(startNode.Position);
+        visited.Add(startNode.GridPosition);
 
         while (queue.Count > 0)
         {
-            var current = queue.Dequeue();
-            if (current.Position == destinationNode.Position)
-                return PathfinderUtils.ConstructPath(path, destinationNode.Position);
-
-            // Explore neighbors
-            foreach (var neighbor in _grid.GetNeighbors(current))
+            var currentNode = queue.Dequeue();
+            if (currentNode.GridPosition == destinationNode.GridPosition)
             {
-                if (visited.Contains(neighbor.Position) || neighbor.Cost == 0)
+                return PathUtils.ConstructPath(path, destinationNode.WorldPosition);
+            }
+            
+            // Explore neighbors
+            foreach (var neighbor in _grid.GetNeighbors(currentNode))
+            {
+                if (visited.Contains(neighbor.GridPosition) || neighbor.Cost == 0)
                 {
                     continue;
-                
                 }
 
                 queue.Enqueue(neighbor);
-                visited.Add(neighbor.Position);
-                path[neighbor.Position] = current.Position;
+                visited.Add(neighbor.GridPosition);
+                path[neighbor.GridPosition] = currentNode.GridPosition;
             }
         }
 

@@ -1,3 +1,4 @@
+using System.Linq;
 using Godot;
 using Maze.Scripts.Pathfinding;
 
@@ -30,6 +31,9 @@ public partial class Monster : CharacterBody2D
 	[Export]
 	public Player? Player { get; set; }
 	
+	[Export]
+	public PathDebugger? PathDebugger { get; set; }
+	
 	#endregion
 	
 
@@ -46,7 +50,7 @@ public partial class Monster : CharacterBody2D
 			_timer.Start();
 		}
 		
-		// UpdateDestinationPath();
+		UpdateDestinationPath();
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -77,10 +81,12 @@ public partial class Monster : CharacterBody2D
 			return;
 		}
 		
-		// var direction =  ToLocal(_navigationAgent.GetNextPathPosition()).Normalized();
-		var direction = ToLocal(_pathfinder.GetNextPathPosition()).Normalized();
-		GD.Print($"direction: {direction}");
-		Velocity = direction * Speed;
+		//var direction =  ToLocal(_navigationAgent.GetNextPathPosition()).Normalized();
+		var nextNodePath = _pathfinder.GetNextPathPosition();
+		var direction = new Vector2(nextNodePath.X * Maze!.GetTileWidth(), nextNodePath.Y * Maze.GetTileHeight());
+		
+		GD.Print($"Direction: {ToLocal(direction)}");
+		Velocity = ToLocal(direction).Normalized() * Speed;
 		MoveAndSlide();
 	}
 
@@ -92,7 +98,11 @@ public partial class Monster : CharacterBody2D
 		}
 		
 		//_navigationAgent.TargetPosition = Player?.GlobalPosition ?? Vector2.Zero;
-		_pathfinder.FindPath(GlobalPosition, Player?.GlobalPosition ?? Vector2.Zero);
-		GD.Print("UpdateDestinationPath");
+		GD.Print($"Enemy: {Position}, Player: {Player?.Position}");
+		var paths = _pathfinder.FindPath(Position, Player?.Position ?? Vector2.Zero)
+			.Select(path => new Vector2(path.X * Maze!.GetTileWidth(), path.Y * Maze.GetTileHeight()))
+			.ToList();
+		
+		PathDebugger?.DrawPath(paths);
 	}
 }

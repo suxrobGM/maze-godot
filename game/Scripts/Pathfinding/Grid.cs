@@ -23,13 +23,18 @@ public class Grid
     
     public Node this[int x, int y] => _nodes[x, y];
     
-    public Node GetNodeFromGlobalPosition(Vector2 worldPosition)
+    public Node GetNodeFromWorldPosition(Vector2 worldPosition)
     {
         var x = Mathf.FloorToInt(worldPosition.X / CellSize);
         var y = Mathf.FloorToInt(worldPosition.Y / CellSize);
         return this[x, y];
     }
 
+    /// <summary>
+    /// Get the neighbors of a node.
+    /// </summary>
+    /// <param name="node">The node to get the neighbors from.</param>
+    /// <returns>The neighbors of the node.</returns>
     public IEnumerable<Node> GetNeighbors(Node node)
     {
         var directions = new List<Vector2>
@@ -42,7 +47,7 @@ public class Grid
 
         foreach (var dir in directions)
         {
-            var next = new Vector2(node.Position.X + dir.X, node.Position.Y + dir.Y);
+            var next = new Vector2(node.GridPosition.X + dir.X, node.GridPosition.Y + dir.Y);
             if (next.X >= 0 && next.X < Width && next.Y >= 0 && next.Y < Height)
             {
                 yield return this[(int)next.X, (int)next.Y];
@@ -56,7 +61,9 @@ public class Grid
         {
             for (var y = 0; y < Height; y++)
             {
-                _nodes[x, y] = new Node(new Vector2(x, y), 0);
+                var worldPosition = new Vector2(x * CellSize, y * CellSize);
+                var gridPosition = new Vector2(x, y);
+                _nodes[x, y] = new Node(gridPosition, worldPosition, 0);
             }
         }
     }
