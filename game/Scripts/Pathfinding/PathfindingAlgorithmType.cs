@@ -4,6 +4,5 @@ public enum PathfindingAlgorithmType
 {
     AStar,
     Dijkstra,
-    Bfs,
-    Dfs
+    Bfs
 }

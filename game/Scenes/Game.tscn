@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://d2w64r8ro8fqc" path="res://Maps/Level1.tscn" id="1_tvdsx"]
 [ext_resource type="PackedScene" uid="uid://cfffpuxqyp5dq" path="res://GameObjects/Player.tscn" id="2_tjagd"]
-[ext_resource type="PackedScene" uid="uid://dktbn0urcuse1" path="res://GameObjects/RedMonster.tscn" id="3_u4pl1"]
-[ext_resource type="PackedScene" uid="uid://cwgr7uffi7p4f" path="res://GameObjects/YellowMonster.tscn" id="4_q80xq"]
+[ext_resource type="PackedScene" uid="uid://dktbn0urcuse1" path="res://GameObjects/RedEnemy.tscn" id="3_u4pl1"]
+[ext_resource type="PackedScene" uid="uid://cwgr7uffi7p4f" path="res://GameObjects/YellowEnemy.tscn" id="4_a0up8"]
 [ext_resource type="PackedScene" uid="uid://d2ea1h83lgjbh" path="res://GameObjects/GoldGem.tscn" id="5_b4bai"]
 [ext_resource type="PackedScene" uid="uid://plwpqjp3hydv" path="res://GameObjects/DiamondGem.tscn" id="6_0m7w1"]
 [ext_resource type="Script" path="res://Scripts/Pathfinding/PathDebugger.cs" id="7_2g7n2"]
@@ -15,17 +15,15 @@
 [node name="Player" parent="." instance=ExtResource("2_tjagd")]
 position = Vector2(87, 139)
 
-[node name="Monster1" parent="." node_paths=PackedStringArray("Maze", "Player", "PathDebugger") instance=ExtResource("3_u4pl1")]
+[node name="Enemy1" parent="." node_paths=PackedStringArray("Maze", "Player", "PathDebugger") instance=ExtResource("3_u4pl1")]
 z_index = 2
 position = Vector2(266, 665)
-PathfindingAlgorithm = 1
 Maze = NodePath("../Level1")
 Player = NodePath("../Player")
 PathDebugger = NodePath("../PathDebugger")
 
-[node name="Monster2" parent="." node_paths=PackedStringArray("Maze", "Player", "PathDebugger") instance=ExtResource("4_q80xq")]
-visible = false
-position = Vector2(589, 813)
+[node name="Enemy2" parent="." node_paths=PackedStringArray("Maze", "Player", "PathDebugger") instance=ExtResource("4_a0up8")]
+position = Vector2(592, 808)
 PathfindingAlgorithm = 1
 Maze = NodePath("../Level1")
 Player = NodePath("../Player")
@@ -45,6 +43,6 @@ position = Vector2(151, 746)
 
 [node name="PathDebugger" type="Line2D" parent="."]
 z_index = 10
-width = 5.0
+width = 2.0
 default_color = Color(0.980392, 0.133333, 0, 1)
 script = ExtResource("7_2g7n2")

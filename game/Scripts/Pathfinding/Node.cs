@@ -4,7 +4,8 @@ namespace Maze.Scripts.Pathfinding;
 
 public class Node
 {
-    public Node(Vector2 gridPosition, Vector2 worldPosition, int cost) {
+    public Node(Vector2 gridPosition, Vector2 worldPosition, int cost) 
+    {
         GridPosition = gridPosition;
         WorldPosition = worldPosition;
         Cost = cost;
@@ -26,7 +27,8 @@ public class Node
     /// </summary>
     public int Cost { get; set; }
     
-    public override string ToString() {
+    public override string ToString() 
+    {
         return $"Grid: {GridPosition}, World: {WorldPosition}, Cost: {Cost}";
     }
 }

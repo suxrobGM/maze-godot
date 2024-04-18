@@ -3,19 +3,16 @@ using Godot;
 
 namespace Maze.Scripts.Pathfinding;
 
-public class BfsPathfinder : IPathfinder
+public class BfsPathfinder : GridBasedPathfinder
 {
-    private Grid _grid;
-
-    public BfsPathfinder(Grid grid)
+    public BfsPathfinder(Grid grid) : base(grid)
     {
-        _grid = grid;
     }
-
-    public IEnumerable<Vector2> FindPath(Vector2 start, Vector2 destination)
+    
+    public override IEnumerable<Vector2> FindPath(Vector2 start, Vector2 destination)
     {
-        var startNode = _grid[(int)start.X, (int)start.Y];
-        var destinationNode = _grid[(int)destination.X, (int)destination.Y];
+        var startNode = Grid[(int)start.X, (int)start.Y];
+        var destinationNode = Grid[(int)destination.X, (int)destination.Y];
         var queue = new Queue<Node>();
         var visited = new HashSet<Vector2>();
         var path = new Dictionary<Vector2, Vector2>();
@@ -32,7 +29,7 @@ public class BfsPathfinder : IPathfinder
             }
             
             // Explore neighbors
-            foreach (var neighbor in _grid.GetNeighbors(currentNode))
+            foreach (var neighbor in Grid.GetNeighbors(currentNode))
             {
                 if (visited.Contains(neighbor.GridPosition) || neighbor.Cost == 0)
                 {
@@ -46,10 +43,5 @@ public class BfsPathfinder : IPathfinder
         }
 
         return new List<Vector2>(); // return an empty path if none found
-    }
-
-    public Vector2 GetNextPathPosition()
-    {
-        throw new System.NotImplementedException();
     }
 }

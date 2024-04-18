@@ -3,14 +3,13 @@ using Godot;
 
 namespace Maze.Scripts.Pathfinding;
 
-public class AStarPathfinder : IPathfinder
+public class AStarPathfinder : GridBasedPathfinder
 {
-    public IEnumerable<Vector2> FindPath(Vector2 start, Vector2 destination)
+    public AStarPathfinder(Grid grid) : base(grid)
     {
-        throw new System.NotImplementedException();
     }
-
-    public Vector2 GetNextPathPosition()
+    
+    public override IEnumerable<Vector2> FindPath(Vector2 start, Vector2 destination)
     {
         throw new System.NotImplementedException();
     }

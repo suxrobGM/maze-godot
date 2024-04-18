@@ -4,21 +4,17 @@ using Godot;
 
 namespace Maze.Scripts.Pathfinding;
 
-public class DijkstraPathfinder : IPathfinder
+public class DijkstraPathfinder : GridBasedPathfinder
 {
-    private readonly Grid _grid;
-    private readonly Queue<Vector2> _lastPath = new();
-
-    public DijkstraPathfinder(Grid grid)
+    public DijkstraPathfinder(Grid grid) : base(grid)
     {
-        _grid = grid;
     }
-
-    public IEnumerable<Vector2> FindPath(Vector2 start, Vector2 destination)
+    
+    public override IEnumerable<Vector2> FindPath(Vector2 start, Vector2 destination)
     {
-        _lastPath.Clear();
-        var startNode = _grid.GetNodeFromWorldPosition(start);
-        var destinationNode = _grid.GetNodeFromWorldPosition(destination);
+        Waypoints.Clear();
+        var startNode = Grid.GetNodeFromWorldPosition(start);
+        var destinationNode = Grid.GetNodeFromWorldPosition(destination);
         var priorityQueue = new PriorityQueue<Node, int>();
         var distances = new Dictionary<Vector2, int>();
         var previous = new Dictionary<Vector2, Vector2>();
@@ -36,14 +32,14 @@ public class DijkstraPathfinder : IPathfinder
                 
                 foreach (var path in paths)
                 {
-                    _lastPath.Enqueue(path);
+                    Waypoints.Enqueue(path);
                 }
                     
                 return paths;
             }
             
             // Explore neighbors
-            foreach (var neighbor in _grid.GetNeighbors(currentNode))
+            foreach (var neighbor in Grid.GetNeighbors(currentNode))
             {
                 // Skip unwalkable nodes
                 if (neighbor.Cost == 0)
@@ -62,11 +58,6 @@ public class DijkstraPathfinder : IPathfinder
             }
         }
 
-        return new List<Vector2>(); // return an empty path if none found
-    }
-
-    public Vector2 GetNextPathPosition()
-    {
-        return _lastPath.Count > 0 ? _lastPath.Dequeue() : Vector2.Zero;
+        return new List<Vector2>();
     }
 }

@@ -13,6 +13,5 @@ public partial class Maze : TileMap
 	}
 
 	public Grid GetGrid() => _grid;
-	public int GetTileWidth() => _grid.Width;
-	public int GetTileHeight() => _grid.Height;
+	public int GetTileSize() => _grid.CellSize;
 }
