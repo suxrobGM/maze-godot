@@ -1,6 +1,5 @@
 using Godot;
 using Maze.Scripts.Pathfinding;
-using Maze.Scripts.Scenes;
 
 namespace Maze.Scripts.Entities;
 
@@ -26,7 +25,7 @@ public partial class Enemy : CharacterBody2D
 	public int Speed { get; set; } = 150;
 	
 	[Export]
-	public MazeScene? Maze { get; set; }
+	public MazeTileMap? Maze { get; set; }
 	
 	[Export]
 	public Player? Player { get; set; }

@@ -14,9 +14,9 @@ public class GameManager
     
     public event EventHandler<int>? ScoreChanged;
     
-    public void AddScore(int score)
+    public void AddScore(int value)
     {
-        _score += score;
+        _score += value;
         ScoreChanged?.Invoke(this, _score);
     }
     
