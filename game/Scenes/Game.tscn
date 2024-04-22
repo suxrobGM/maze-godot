@@ -54,13 +54,13 @@ PathfindingAlgorithm = 2
 [node name="Gems" type="Node2D" parent="."]
 
 [node name="GoldGem1" parent="Gems" instance=ExtResource("5_b4bai")]
-position = Vector2(197, 275)
+position = Vector2(777, 637)
 
 [node name="GoldGem2" parent="Gems" instance=ExtResource("5_b4bai")]
-position = Vector2(151, 746)
+position = Vector2(396, 701)
 
 [node name="GoldGem3" parent="Gems" instance=ExtResource("5_b4bai")]
-position = Vector2(934, 891)
+position = Vector2(942, 933)
 
 [node name="GoldGem4" parent="Gems" instance=ExtResource("5_b4bai")]
 position = Vector2(908, 136)
@@ -78,10 +78,10 @@ position = Vector2(591, 585)
 position = Vector2(857, 713)
 
 [node name="DiamondGem3" parent="Gems" instance=ExtResource("6_0m7w1")]
-position = Vector2(431, 694)
+position = Vector2(63, 743)
 
 [node name="DiamondGem4" parent="Gems" instance=ExtResource("6_0m7w1")]
-position = Vector2(766, 634)
+position = Vector2(77, 271)
 
 [node name="DiamondGem5" parent="Gems" instance=ExtResource("6_0m7w1")]
 position = Vector2(929, 278)

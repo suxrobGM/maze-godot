@@ -19,8 +19,15 @@ public partial class GameScene : Node2D
 	{
 		GameManager.Instance.ScoreChanged += UpdateScoreLabel;
 	}
-	
-	
+
+	public override void _Input(InputEvent input)
+	{
+		if (input.IsAction(InputActions.PauseMenu))
+		{
+			GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
+		}
+	}
+
 	#region Event Handlers
 
 	private void UpdateScoreLabel(object? sender, int score)

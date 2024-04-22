@@ -11,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ay2g6")
-StartButton = NodePath("CenterContainer/Panel/VBoxContainer/StartButton")
+StartButton = NodePath("CenterContainer/Panel/VBoxContainer/StartGameButton")
 ExitButton = NodePath("CenterContainer/Panel/VBoxContainer/ExitButton")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -35,10 +35,25 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="StartButton" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="StartGameButton" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_udrmy")
-text = "Start"
+text = "Start Usual Game"
+
+[node name="TestAStarButton" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_udrmy")
+text = "Test A*"
+
+[node name="TestDijkstraButton" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_udrmy")
+text = "Test Dijsktra"
+
+[node name="TestBfsButton" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_udrmy")
+text = "Test BFS"
 
 [node name="ExitButton" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
