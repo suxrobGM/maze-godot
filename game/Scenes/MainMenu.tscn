@@ -41,7 +41,7 @@ theme_override_constants/separation = 10
 [node name="StartGameButton" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_udrmy")
-text = "Start Usual Game"
+text = "Start Game"
 
 [node name="TestAStarButton" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2

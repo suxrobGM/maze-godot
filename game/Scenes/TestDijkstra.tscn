@@ -20,6 +20,8 @@ Maze = NodePath("MazeTileMap")
 z_index = 10
 
 [node name="ScoreLabel" type="Label" parent="UI"]
+anchors_preset = -1
+offset_left = 5.0
 offset_right = 121.0
 offset_bottom = 45.0
 text = "Score: 0"
