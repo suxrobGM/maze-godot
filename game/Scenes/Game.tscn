@@ -33,19 +33,19 @@ position = Vector2(87, 139)
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Enemy1" parent="Enemies" node_paths=PackedStringArray("Maze", "Player") instance=ExtResource("4_a0up8")]
-position = Vector2(176, 952)
+position = Vector2(136, 822)
 Maze = NodePath("../../Level1")
 Player = NodePath("../../Player")
 
 [node name="Enemy2" parent="Enemies" node_paths=PackedStringArray("Maze", "Player") instance=ExtResource("4_a0up8")]
-position = Vector2(128, 952)
+position = Vector2(924, 839)
 Type = 1
 Maze = NodePath("../../Level1")
 Player = NodePath("../../Player")
 PathfindingAlgorithm = 1
 
 [node name="Enemy3" parent="Enemies" node_paths=PackedStringArray("Maze", "Player") instance=ExtResource("4_a0up8")]
-position = Vector2(72, 952)
+position = Vector2(770, 542)
 Type = 1
 Maze = NodePath("../../Level1")
 Player = NodePath("../../Player")

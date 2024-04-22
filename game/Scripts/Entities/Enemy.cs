@@ -31,7 +31,7 @@ public partial class Enemy : CharacterBody2D
 	public Player? Player { get; set; }
 	
 	[Export, ExportGroup("Pathfinder")]
-	public PathfindingAlgorithmType PathfindingAlgorithm { get; set; } = PathfindingAlgorithmType.AStar;
+	public PathfindingAlgorithmType PathfindingAlgorithm { get; set; }
 	
 	[Export, ExportGroup("Pathfinder")]
 	public Alignment PathCellAlignment { get; set; }
@@ -128,7 +128,6 @@ public partial class Enemy : CharacterBody2D
 			direction = _pathfinder.GetNextPathPosition();
 		}
 		
-		// GD.Print($"Enemy: {ToLocal(direction)}, Player: {ToLocal(Player?.Position ?? Vector2.Zero)}, Node Position: {direction}");
 		Velocity = ToLocal(direction).Normalized() * Speed;
 		MoveAndSlide();
 	}
