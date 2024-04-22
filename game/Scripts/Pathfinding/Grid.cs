@@ -5,14 +5,12 @@ namespace Maze.Scripts.Pathfinding;
 
 public class Grid
 {
-    private readonly Node[,] _nodes;
-    
     public Grid(int width, int height, int cellSize = 32)
     {
         Width = width;
         Height = height;
         CellSize = cellSize;
-        _nodes = new Node[width, height];
+        Nodes = new Node[width, height];
         InitEmptyNodes();
     }
     
@@ -20,8 +18,9 @@ public class Grid
     public int Height { get; }
     public int CellSize { get; }
     public int Size => Width * Height;
+    public Node[,] Nodes { get; }
     
-    public Node this[int x, int y] => _nodes[x, y];
+    public Node this[int x, int y] => Nodes[x, y];
     
     public Node GetNodeFromWorldPosition(Vector2 worldPosition)
     {
@@ -79,7 +78,7 @@ public class Grid
         {
             for (var y = 0; y < Height; y++)
             {
-                _nodes[x, y] = new Node(new Vector2(x, y), 0);
+                Nodes[x, y] = new Node(new Vector2(x, y), 0);
             }
         }
     }
