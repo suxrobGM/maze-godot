@@ -7,9 +7,7 @@ public static class GridFactory
     public static Grid CreateGridFromTileMap(TileMap tileMap)
     {
         var worldRect = tileMap.GetUsedRect();
-        var width = worldRect.Size.X;
-        var height = worldRect.Size.Y;
-        var grid = new Grid(width, height);
+        var grid = new Grid(worldRect.Size.X, worldRect.Size.Y);
         var walkableCells = tileMap.GetUsedCells(0);
 
         foreach (var cell in walkableCells)
