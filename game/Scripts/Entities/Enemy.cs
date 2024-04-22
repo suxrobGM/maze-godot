@@ -5,13 +5,18 @@ namespace Maze.Scripts.Entities;
 
 public partial class Enemy : CharacterBody2D
 {
-	private AnimatedSprite2D? _redAnimatedSprite;
-	private AnimatedSprite2D? _yellowAnimatedSprite;
-	private NavigationAgent2D? _navigationAgent;
-	private Timer? _timer;
-	private PathDebugger? _pathDebugger;
+	private AnimatedSprite2D _redAnimatedSprite = default!;
+	private AnimatedSprite2D _yellowAnimatedSprite = default!;
+	private NavigationAgent2D _navigationAgent = default!;
+	private Timer _timer = default!;
+	private PathDebugger _pathDebugger = default!;
 	private PathOptions _pathOptions = default!;
 	private IPathfinder _pathfinder = default!;
+	private AcceptDialog? _messageBox;
+	private MazeTileMap? _maze;
+	private Player? _player;
+	private ulong _pathStartTime;
+	private bool _alreadyCollidedWithPlayer;
 	
 	#region Parameters
 
@@ -24,12 +29,6 @@ public partial class Enemy : CharacterBody2D
 	[Export]
 	public int Speed { get; set; } = 150;
 	
-	[Export]
-	public MazeTileMap? Maze { get; set; }
-	
-	[Export]
-	public Player? Player { get; set; }
-	
 	[Export, ExportGroup("Pathfinder")]
 	public PathfindingAlgorithmType PathfindingAlgorithm { get; set; }
 	
@@ -39,11 +38,28 @@ public partial class Enemy : CharacterBody2D
 	[Export, ExportGroup("Pathfinder")]
 	public Color DebugPathColor { get; set; } = Colors.Red;
 	
+	[Export, ExportGroup("Pathfinder")]
+	public bool MeasurePerformance { get; set; }
+	
 	#endregion
 	
 
 	public override void _Ready()
 	{
+		_messageBox = GetTree().CurrentScene.GetNode<AcceptDialog>("UI/MessageBox");
+		_player = GetTree().CurrentScene.GetNode<Player>("Player");
+		_maze = GetTree().CurrentScene.GetNode<MazeTileMap>("MazeTileMap");
+		
+		if (_player is null)
+		{
+			GD.PrintErr("Player is not found from scene tree");
+		}
+
+		if (_maze is null)
+		{
+			GD.PrintErr("MazeTileMap is not found from scene tree");
+		}
+		
 		InitSprite();
 		InitPathfinder();
 		GameManager.Instance.DebugModeChanged += TogglePathDebugger;
@@ -79,7 +95,7 @@ public partial class Enemy : CharacterBody2D
 	
 	private void InitPathfinder()
 	{
-		if (Maze is null)
+		if (_maze is null)
 		{
 			return;
 		}
@@ -92,9 +108,9 @@ public partial class Enemy : CharacterBody2D
 		
 		_pathfinder = PathfindingAlgorithm switch
 		{
-			PathfindingAlgorithmType.AStar => new AStarPathfinder(Maze.GetGrid()),
-			PathfindingAlgorithmType.Dijkstra => new DijkstraPathfinder(Maze.GetGrid()),
-			PathfindingAlgorithmType.Bfs => new BfsPathfinder(Maze.GetGrid()),
+			PathfindingAlgorithmType.AStar => new AStarPathfinder(_maze.GetGrid()),
+			PathfindingAlgorithmType.Dijkstra => new DijkstraPathfinder(_maze.GetGrid()),
+			PathfindingAlgorithmType.Bfs => new BfsPathfinder(_maze.GetGrid()),
 			_ => _pathfinder
 		};
 		
@@ -104,22 +120,16 @@ public partial class Enemy : CharacterBody2D
 		_pathDebugger.DefaultColor = DebugPathColor;
 		_navigationAgent.DebugUseCustom = true;
 		_navigationAgent.DebugPathCustomColor = DebugPathColor;
+		TogglePathDebugger(GameManager.Instance.IsDebugEnabled);
 		
-		if (_timer is not null)
-		{
-			if (PathfindingAlgorithm is not PathfindingAlgorithmType.AStar)
-			{
-				_timer.WaitTime = 0.5;
-			}
-			
-			_timer.Timeout += UpdateDestinationPath;
-			_timer.Start();
-		}
+		_timer.Timeout += UpdateDestinationPath;
+		_timer.Start();
+		_pathStartTime = Time.GetTicksMsec();
 	}
 
 	private void MoveTowardsPlayer()
 	{
-		if (!CanMove || _navigationAgent is null)
+		if (!CanMove)
 		{
 			return;
 		}
@@ -138,44 +148,63 @@ public partial class Enemy : CharacterBody2D
 			}
 			
 			direction = _pathfinder.GetNextPathPosition();
+
+			if (direction == Vector2.Zero)
+			{
+				direction = Position;
+			}
 		}
 		
 		Velocity = ToLocal(direction).Normalized() * Speed;
 		MoveAndSlide();
+		HandleCollisionWithPlayer();
 	}
 
 	private void UpdateDestinationPath()
 	{
-		if (_navigationAgent is null)
-		{
-			return;
-		}
-
 		if (PathfindingAlgorithm is PathfindingAlgorithmType.AStar)
 		{
-			_navigationAgent.TargetPosition = Player?.Position ?? Vector2.Zero;
+			_navigationAgent.TargetPosition = _player?.Position ?? Vector2.Zero;
 		}
 		else
 		{
-			var paths = _pathfinder.FindPath(Position, Player?.Position ?? Vector2.Zero, _pathOptions);
+			var paths = _pathfinder.FindPath(Position, _player?.Position ?? Vector2.Zero, _pathOptions);
 
-			if (GameManager.Instance.IsDebugModeEnabled)
+			if (GameManager.Instance.IsDebugEnabled)
 			{
-				_pathDebugger?.DrawPath(paths);
+				_pathDebugger.DrawPath(paths);
 			}
 		}
 	}
 	
 	private void TogglePathDebugger(bool isDebugMode)
 	{
-		if (_pathDebugger is not null)
+		_pathDebugger.Visible = isDebugMode;
+		_navigationAgent.DebugEnabled = isDebugMode;
+	}
+
+	private void HandleCollisionWithPlayer()
+	{
+		if (_alreadyCollidedWithPlayer)
 		{
-			_pathDebugger.Visible = isDebugMode;
+			return;
+		}	
+		
+		var lastCollision = GetLastSlideCollision();
+
+		if (lastCollision?.GetCollider() is not Player)
+		{
+			return;
+		}
+		
+		if (MeasurePerformance && _messageBox is not null)
+		{
+			_alreadyCollidedWithPlayer = true;
+			_messageBox.Title = "Performance";
+			_messageBox.DialogText = $"Pathfinding '{PathfindingAlgorithm}' performance: {Time.GetTicksMsec() - _pathStartTime} ms";
+			_messageBox.Show();
 		}
 
-		if (_navigationAgent is not null)
-		{
-			_navigationAgent.DebugEnabled = isDebugMode;
-		}
+		_pathStartTime = Time.GetTicksMsec(); // Reset the path start time
 	}
 }

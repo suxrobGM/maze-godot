@@ -5,32 +5,32 @@ namespace Maze.Scripts;
 public sealed class GameManager
 {
     private int _score;
-    private bool _isDebugModeEnabled;
+    private bool _isDebugEnabled;
     
     private GameManager()
     {
     }
     
     public static GameManager Instance { get; } = new();
-
-    #region Properties
-
-    public bool IsDebugModeEnabled
-    {
-        get => _isDebugModeEnabled;
-        private set
-        {
-            _isDebugModeEnabled = value;
-            DebugModeChanged?.Invoke(_isDebugModeEnabled);
-        }
-    }
-
-    #endregion
-
+    
     #region Events
 
     public event Action<int>? ScoreChanged;
     public event Action<bool>? DebugModeChanged; 
+
+    #endregion
+
+    #region Properties
+
+    public bool IsDebugEnabled
+    {
+        get => _isDebugEnabled;
+        private set
+        {
+            _isDebugEnabled = value;
+            DebugModeChanged?.Invoke(_isDebugEnabled);
+        }
+    }
 
     #endregion
     
@@ -49,6 +49,11 @@ public sealed class GameManager
     
     public void ToggleDebug()
     {
-        IsDebugModeEnabled = !IsDebugModeEnabled;
+        IsDebugEnabled = !IsDebugEnabled;
+    }
+    
+    public void EnableDebug()
+    {
+        IsDebugEnabled = true;
     }
 }

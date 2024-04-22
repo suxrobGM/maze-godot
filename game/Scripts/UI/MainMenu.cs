@@ -30,9 +30,9 @@ public partial class MainMenu : Control
 	{
 		GameManager.Instance.ResetScore();
 		AddEventHandler(StartButton, () => ChangeScene(ScenePaths.Game));
-		AddEventHandler(TestAStarButton, () => ChangeScene(ScenePaths.TestAStar));
-		AddEventHandler(TestDijkstraButton, () => ChangeScene(ScenePaths.TestDijkstra));
-		AddEventHandler(TestBfsButton, () => ChangeScene(ScenePaths.TestBfs));
+		AddEventHandler(TestAStarButton, () => ChangeToTestScene(ScenePaths.TestAStar));
+		AddEventHandler(TestDijkstraButton, () => ChangeToTestScene(ScenePaths.TestDijkstra));
+		AddEventHandler(TestBfsButton, () => ChangeToTestScene(ScenePaths.TestBfs));
 		AddEventHandler(ExitButton, OnExitButtonPressed);
 	}
 
@@ -46,6 +46,12 @@ public partial class MainMenu : Control
 
 	private void ChangeScene(string scenePath)
 	{
+		GetTree().ChangeSceneToFile(scenePath);
+	}
+	
+	private void ChangeToTestScene(string scenePath)
+	{
+		GameManager.Instance.EnableDebug();
 		GetTree().ChangeSceneToFile(scenePath);
 	}
 	

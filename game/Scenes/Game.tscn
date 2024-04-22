@@ -14,7 +14,7 @@ font_color = Color(0, 0.584314, 0.772549, 1)
 [node name="World" type="Node2D" node_paths=PackedStringArray("ScoreLabel", "Maze")]
 script = ExtResource("1_l01du")
 ScoreLabel = NodePath("UI/ScoreLabel")
-Maze = NodePath("Level1")
+Maze = NodePath("MazeTileMap")
 
 [node name="UI" type="Node2D" parent="."]
 z_index = 10
@@ -25,31 +25,28 @@ offset_bottom = 45.0
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_emjdd")
 
-[node name="Level1" parent="." instance=ExtResource("1_tvdsx")]
+[node name="MessageBox" type="AcceptDialog" parent="UI"]
+initial_position = 1
+
+[node name="MazeTileMap" parent="." instance=ExtResource("1_tvdsx")]
 
 [node name="Player" parent="." instance=ExtResource("2_tjagd")]
 position = Vector2(87, 139)
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Enemy1" parent="Enemies" node_paths=PackedStringArray("Maze", "Player") instance=ExtResource("4_a0up8")]
+[node name="Enemy1" parent="Enemies" instance=ExtResource("4_a0up8")]
 position = Vector2(136, 822)
-Maze = NodePath("../../Level1")
-Player = NodePath("../../Player")
 
-[node name="Enemy2" parent="Enemies" node_paths=PackedStringArray("Maze", "Player") instance=ExtResource("4_a0up8")]
+[node name="Enemy2" parent="Enemies" instance=ExtResource("4_a0up8")]
 position = Vector2(924, 839)
 Type = 1
-Maze = NodePath("../../Level1")
-Player = NodePath("../../Player")
 PathfindingAlgorithm = 1
 DebugPathColor = Color(0.741176, 0.211765, 1, 1)
 
-[node name="Enemy3" parent="Enemies" node_paths=PackedStringArray("Maze", "Player") instance=ExtResource("4_a0up8")]
+[node name="Enemy3" parent="Enemies" instance=ExtResource("4_a0up8")]
 position = Vector2(770, 542)
 Type = 1
-Maze = NodePath("../../Level1")
-Player = NodePath("../../Player")
 PathfindingAlgorithm = 2
 DebugPathColor = Color(0.0313726, 0.564706, 0.858824, 1)
 
