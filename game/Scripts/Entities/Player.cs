@@ -21,6 +21,11 @@ public partial class Player : CharacterBody2D
 		UpdateAnimation();
 		MoveAndSlide();
 	}
+	
+	public void CollectGem(int value)
+	{
+		GameManager.Instance.AddScore(value);
+	}
 
 	private void SetVelocity()
 	{

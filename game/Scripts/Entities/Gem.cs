@@ -17,5 +17,26 @@ public partial class Gem : Area2D
 	{
 		_animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		_animatedSprite?.Play();
+		
+		BodyEntered += OnBodyEntered;
+	}
+
+	public int GetValue()
+	{
+		return Type switch
+		{
+			GemType.Gold => 10,
+			GemType.Diamond => 20,
+			_ => 0
+		};
+	}
+	
+	private void OnBodyEntered(Node2D body)
+	{
+		if (body is Player player)
+		{
+			player.CollectGem(GetValue());
+			QueueFree();
+		}
 	}
 }
