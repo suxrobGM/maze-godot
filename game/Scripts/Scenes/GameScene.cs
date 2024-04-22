@@ -3,7 +3,7 @@ using Maze.Scripts.Entities;
 
 namespace Maze.Scripts.Scenes;
 
-public partial class GameScene : Node2D
+public partial class GameScene : BaseScene
 {
 	#region Parameters
 
@@ -15,22 +15,20 @@ public partial class GameScene : Node2D
 
 	#endregion
 	
+	
 	public override void _Ready()
 	{
 		GameManager.Instance.ScoreChanged += UpdateScoreLabel;
 	}
 
-	public override void _Input(InputEvent input)
+	public override void _ExitTree()
 	{
-		if (input.IsAction(InputActions.PauseMenu))
-		{
-			GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
-		}
+		GameManager.Instance.ScoreChanged -= UpdateScoreLabel;
 	}
 
 	#region Event Handlers
 
-	private void UpdateScoreLabel(object? sender, int score)
+	private void UpdateScoreLabel(int score)
 	{
 		if (ScoreLabel is null)
 		{

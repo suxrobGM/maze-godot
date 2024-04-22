@@ -43,6 +43,7 @@ Type = 1
 Maze = NodePath("../../Level1")
 Player = NodePath("../../Player")
 PathfindingAlgorithm = 1
+DebugPathColor = Color(0.741176, 0.211765, 1, 1)
 
 [node name="Enemy3" parent="Enemies" node_paths=PackedStringArray("Maze", "Player") instance=ExtResource("4_a0up8")]
 position = Vector2(770, 542)
@@ -50,6 +51,7 @@ Type = 1
 Maze = NodePath("../../Level1")
 Player = NodePath("../../Player")
 PathfindingAlgorithm = 2
+DebugPathColor = Color(0.0313726, 0.564706, 0.858824, 1)
 
 [node name="Gems" type="Node2D" parent="."]
 

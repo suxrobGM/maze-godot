@@ -36,6 +36,9 @@ public partial class Enemy : CharacterBody2D
 	[Export, ExportGroup("Pathfinder")]
 	public Alignment PathCellAlignment { get; set; }
 	
+	[Export, ExportGroup("Pathfinder")]
+	public Color DebugPathColor { get; set; } = Colors.Red;
+	
 	#endregion
 	
 
@@ -43,11 +46,17 @@ public partial class Enemy : CharacterBody2D
 	{
 		InitSprite();
 		InitPathfinder();
+		GameManager.Instance.DebugModeChanged += TogglePathDebugger;
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
 		MoveTowardsPlayer();
+	}
+
+	public override void _ExitTree()
+	{
+		GameManager.Instance.DebugModeChanged -= TogglePathDebugger;
 	}
 
 	private void InitSprite()
@@ -92,6 +101,9 @@ public partial class Enemy : CharacterBody2D
 		_navigationAgent = GetNode<NavigationAgent2D>("Navigation/NavigationAgent2D");
 		_timer = GetNode<Timer>("Navigation/Timer");
 		_pathDebugger = GetNode<PathDebugger>("Navigation/PathDebugger");
+		_pathDebugger.DefaultColor = DebugPathColor;
+		_navigationAgent.DebugUseCustom = true;
+		_navigationAgent.DebugPathCustomColor = DebugPathColor;
 		
 		if (_timer is not null)
 		{
@@ -146,7 +158,24 @@ public partial class Enemy : CharacterBody2D
 		else
 		{
 			var paths = _pathfinder.FindPath(Position, Player?.Position ?? Vector2.Zero, _pathOptions);
-			_pathDebugger?.DrawPath(paths);
+
+			if (GameManager.Instance.IsDebugModeEnabled)
+			{
+				_pathDebugger?.DrawPath(paths);
+			}
+		}
+	}
+	
+	private void TogglePathDebugger(bool isDebugMode)
+	{
+		if (_pathDebugger is not null)
+		{
+			_pathDebugger.Visible = isDebugMode;
+		}
+
+		if (_navigationAgent is not null)
+		{
+			_navigationAgent.DebugEnabled = isDebugMode;
 		}
 	}
 }

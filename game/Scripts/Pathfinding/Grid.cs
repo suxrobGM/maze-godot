@@ -14,11 +14,11 @@ public class Grid
         InitEmptyNodes();
     }
     
+    public Node[,] Nodes { get; }
     public int Width { get; }
     public int Height { get; }
     public int CellSize { get; }
     public int Size => Width * Height;
-    public Node[,] Nodes { get; }
     
     public Node this[int x, int y] => Nodes[x, y];
     

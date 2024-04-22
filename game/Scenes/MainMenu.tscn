@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/MainMenu.cs" id="1_ay2g6"]
 [ext_resource type="Theme" uid="uid://c6bkcl5m2eyi3" path="res://UI/Theme1.tres" id="1_udrmy"]
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("StartButton", "ExitButton")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("StartButton", "TestAStarButton", "TestDijkstraButton", "TestBfsButton", "ExitButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +12,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ay2g6")
 StartButton = NodePath("CenterContainer/Panel/VBoxContainer/StartGameButton")
+TestAStarButton = NodePath("CenterContainer/Panel/VBoxContainer/TestAStarButton")
+TestDijkstraButton = NodePath("CenterContainer/Panel/VBoxContainer/TestDijkstraButton")
+TestBfsButton = NodePath("CenterContainer/Panel/VBoxContainer/TestBfsButton")
 ExitButton = NodePath("CenterContainer/Panel/VBoxContainer/ExitButton")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
