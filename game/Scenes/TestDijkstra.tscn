@@ -36,7 +36,7 @@ position = Vector2(87, 139)
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Enemy1" parent="Enemies" instance=ExtResource("4_vtqbx")]
-position = Vector2(944, 851)
+position = Vector2(62, 958)
 PathfindingAlgorithm = 1
 MeasurePerformance = true
 

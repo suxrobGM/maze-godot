@@ -8,7 +8,7 @@ public partial class Enemy : CharacterBody2D
 	private AnimatedSprite2D _redAnimatedSprite = default!;
 	private AnimatedSprite2D _yellowAnimatedSprite = default!;
 	private NavigationAgent2D _navigationAgent = default!;
-	private Timer _timer = default!;
+	private Timer _navigationUpdater = default!;
 	private PathDebugger _pathDebugger = default!;
 	private PathOptions _pathOptions = default!;
 	private IPathfinder _pathfinder = default!;
@@ -115,15 +115,15 @@ public partial class Enemy : CharacterBody2D
 		};
 		
 		_navigationAgent = GetNode<NavigationAgent2D>("Navigation/NavigationAgent2D");
-		_timer = GetNode<Timer>("Navigation/Timer");
+		_navigationUpdater = GetNode<Timer>("Navigation/Timer");
 		_pathDebugger = GetNode<PathDebugger>("Navigation/PathDebugger");
 		_pathDebugger.DefaultColor = DebugPathColor;
 		_navigationAgent.DebugUseCustom = true;
 		_navigationAgent.DebugPathCustomColor = DebugPathColor;
 		TogglePathDebugger(GameManager.Instance.IsDebugEnabled);
 		
-		_timer.Timeout += UpdateDestinationPath;
-		_timer.Start();
+		_navigationUpdater.Timeout += UpdateDestinationPath;
+		_navigationUpdater.Start();
 		_pathStartTime = Time.GetTicksMsec();
 	}
 
@@ -142,17 +142,7 @@ public partial class Enemy : CharacterBody2D
 		}
 		else
 		{
-			if (_pathfinder.GetPathLength() == 0)
-			{
-				UpdateDestinationPath();
-			}
-			
-			direction = _pathfinder.GetNextPathPosition();
-
-			if (direction == Vector2.Zero)
-			{
-				direction = Position;
-			}
+			direction = _pathfinder.GetNextPathPosition(Position);
 		}
 		
 		Velocity = ToLocal(direction).Normalized() * Speed;
