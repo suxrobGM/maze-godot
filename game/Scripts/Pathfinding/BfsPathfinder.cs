@@ -9,39 +9,45 @@ public class BfsPathfinder : GridBasedPathfinder
     {
     }
     
-    public override IEnumerable<Vector2> FindPath(Vector2 start, Vector2 destination)
+    public override IEnumerable<Vector2> FindPath(Vector2 start, Vector2 destination, PathOptions? options = default)
     {
-        var startNode = Grid[(int)start.X, (int)start.Y];
-        var destinationNode = Grid[(int)destination.X, (int)destination.Y];
+        options ??= new PathOptions();
+        Waypoints.Clear();
+        var startNode = Grid.GetNodeFromWorldPosition(start);
+        var destinationNode = Grid.GetNodeFromWorldPosition(destination);
+        
         var queue = new Queue<Node>();
-        var visited = new HashSet<Vector2>();
-        var path = new Dictionary<Vector2, Vector2>();
+        var visited = new HashSet<Node>();
+        var pathDict = new Dictionary<Node, Node>();
 
         queue.Enqueue(startNode);
-        visited.Add(startNode.GridPosition);
+        visited.Add(startNode);
 
         while (queue.Count > 0)
         {
             var currentNode = queue.Dequeue();
-            if (currentNode.GridPosition == destinationNode.GridPosition)
+            
+            if (currentNode.Equals(destinationNode))
             {
-                return PathUtils.ConstructPath(path, destinationNode.WorldPosition);
+                var paths = ConstructPath(pathDict, destinationNode, options);
+                return paths;
             }
             
             // Explore neighbors
             foreach (var neighbor in Grid.GetNeighbors(currentNode))
             {
-                if (visited.Contains(neighbor.GridPosition) || neighbor.Cost == 0)
+                // Skip unwalkable nodes
+                if (visited.Contains(neighbor) || neighbor.Cost == 0)
                 {
                     continue;
                 }
 
                 queue.Enqueue(neighbor);
-                visited.Add(neighbor.GridPosition);
-                path[neighbor.GridPosition] = currentNode.GridPosition;
+                visited.Add(neighbor);
+                pathDict[neighbor] = currentNode;
             }
         }
 
-        return new List<Vector2>(); // return an empty path if none found
+        return new List<Vector2>();
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Maze.Scripts.GameObjects;
+﻿namespace Maze.Scripts.Entities;
 
 public enum EnemyType
 {

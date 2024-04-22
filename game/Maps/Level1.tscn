@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d2w64r8ro8fqc"]
 
-[ext_resource type="Script" path="res://Scripts/GameObjects/Maze.cs" id="2_iok6h"]
+[ext_resource type="Script" path="res://Scripts/Entities/Maze.cs" id="2_iok6h"]
 [ext_resource type="Texture2D" uid="uid://do7ubpvnshpxu" path="res://Assets/tileset.png" id="Tileset"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_re386"]

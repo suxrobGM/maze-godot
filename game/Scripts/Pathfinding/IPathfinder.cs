@@ -10,18 +10,19 @@ public interface IPathfinder
     /// </summary>
     /// <param name="start">The starting position</param>
     /// <param name="destination">The destination position</param>
+    /// <param name="options">Custom options for pathfinding</param>
     /// <returns>
     /// A collection of positions that represent the path from the start to the destination.
     /// </returns>
-    IEnumerable<Vector2> FindPath(Vector2 start, Vector2 destination);
+    IEnumerable<Vector2> FindPath(Vector2 start, Vector2 destination, PathOptions? options = default);
     
     /// <summary>
-    /// Retrieves the next position in the path queue and optionally converts it from grid coordinates to world coordinates.
+    /// Retrieves the next position in the path queue.
     /// </summary>
-    /// <param name="convertToWorldPosition">If true, converts the grid coordinates to world coordinates based on the cell size of the grid. If false, returns the raw grid coordinates.</param>
-    /// <param name="centerToCell">If true, returns the position centered in the middle of the cell. If false, returns the position at the top-left corner of the cell.</param>
-    /// <returns>The next position in the path as a <see cref="Vector2"/>. If no positions are left in the queue, returns <see cref="Vector2.Zero"/>.</returns>
-    Vector2 GetNextPathPosition(bool convertToWorldPosition = true, bool centerToCell = false);
+    /// <returns>
+    /// The next position in the path as a <see cref="Vector2"/>. If no positions are left in the queue, returns <see cref="Vector2.Zero"/>.
+    /// </returns>
+    Vector2 GetNextPathPosition();
     
     /// <summary>
     /// Gets the length of the path queue.

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Godot;
 
 namespace Maze.Scripts.Pathfinding;
@@ -10,31 +9,27 @@ public class DijkstraPathfinder : GridBasedPathfinder
     {
     }
     
-    public override IEnumerable<Vector2> FindPath(Vector2 start, Vector2 destination)
+    public override IEnumerable<Vector2> FindPath(Vector2 start, Vector2 destination, PathOptions? options = default)
     {
+        options ??= new PathOptions();
         Waypoints.Clear();
         var startNode = Grid.GetNodeFromWorldPosition(start);
         var destinationNode = Grid.GetNodeFromWorldPosition(destination);
+        
         var priorityQueue = new PriorityQueue<Node, int>();
-        var distances = new Dictionary<Vector2, int>();
-        var previous = new Dictionary<Vector2, Vector2>();
+        var distances = new Dictionary<Node, int>();
+        var previous = new Dictionary<Node, Node>(); // for backtracking path
 
         priorityQueue.Enqueue(startNode, 0);
-        distances[startNode.GridPosition] = 0;
+        distances[startNode] = 0;
 
         while (priorityQueue.Count > 0)
         {
             var currentNode = priorityQueue.Dequeue();
 
-            if (currentNode.GridPosition == destinationNode.GridPosition)
+            if (currentNode.Equals(destinationNode))
             {
-                var paths = PathUtils.ConstructPath(previous, destinationNode.GridPosition).ToList();
-                
-                foreach (var path in paths)
-                {
-                    Waypoints.Enqueue(path);
-                }
-                    
+                var paths = ConstructPath(previous, destinationNode, options);
                 return paths;
             }
             
@@ -47,13 +42,13 @@ public class DijkstraPathfinder : GridBasedPathfinder
                     continue; 
                 }
 
-                var newCost = distances[currentNode.GridPosition] + neighbor.Cost;
+                var newCost = distances[currentNode] + neighbor.Cost;
                 
-                if (!distances.ContainsKey(neighbor.GridPosition) || newCost < distances[neighbor.GridPosition])
+                if (!distances.ContainsKey(neighbor) || newCost < distances[neighbor])
                 {
-                    distances[neighbor.GridPosition] = newCost;
+                    distances[neighbor] = newCost;
                     priorityQueue.Enqueue(neighbor, newCost);
-                    previous[neighbor.GridPosition] = currentNode.GridPosition;
+                    previous[neighbor] = currentNode;
                 }
             }
         }

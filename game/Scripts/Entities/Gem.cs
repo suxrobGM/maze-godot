@@ -1,6 +1,6 @@
 using Godot;
 
-namespace Maze.Scripts.GameObjects;
+namespace Maze.Scripts.Entities;
 
 public partial class Gem : Area2D
 {

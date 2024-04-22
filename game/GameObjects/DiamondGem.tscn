@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://plwpqjp3hydv"]
 
-[ext_resource type="Script" path="res://Scripts/GameObjects/Gem.cs" id="1_vomtr"]
+[ext_resource type="Script" path="res://Scripts/Entities/Gem.cs" id="1_vomtr"]
 [ext_resource type="Texture2D" uid="uid://vbavnjqgyija" path="res://Assets/Textures/Gems/Diamond/gem01_0000.png" id="2_ikupo"]
 [ext_resource type="Texture2D" uid="uid://s5pq1j2k67fs" path="res://Assets/Textures/Gems/Diamond/gem01_0001.png" id="3_7pg3w"]
 [ext_resource type="Texture2D" uid="uid://durppqlnaupta" path="res://Assets/Textures/Gems/Diamond/gem01_0002.png" id="4_p7o8o"]

@@ -1,7 +1,7 @@
 using Godot;
 using Maze.Scripts.Pathfinding;
 
-namespace Maze.Scripts.GameObjects;
+namespace Maze.Scripts.Entities;
 
 public partial class Maze : TileMap
 {

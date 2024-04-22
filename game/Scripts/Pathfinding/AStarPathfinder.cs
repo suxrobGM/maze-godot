@@ -9,7 +9,7 @@ public class AStarPathfinder : GridBasedPathfinder
     {
     }
     
-    public override IEnumerable<Vector2> FindPath(Vector2 start, Vector2 destination)
+    public override IEnumerable<Vector2> FindPath(Vector2 start, Vector2 destination, PathOptions? options = default)
     {
         throw new System.NotImplementedException();
     }

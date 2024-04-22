@@ -1,6 +1,6 @@
 [gd_scene load_steps=140 format=3 uid="uid://cfffpuxqyp5dq"]
 
-[ext_resource type="Script" path="res://Scripts/GameObjects/Player.cs" id="1_3lrwq"]
+[ext_resource type="Script" path="res://Scripts/Entities/Player.cs" id="1_3lrwq"]
 [ext_resource type="Texture2D" uid="uid://diikwkoubflty" path="res://Assets/Textures/Player/idleB/hero_idleB_0000.png" id="3_2wmvw"]
 [ext_resource type="Texture2D" uid="uid://bvug4nevnaeyr" path="res://Assets/Textures/Player/idleB/hero_idleB_0001.png" id="4_snhnt"]
 [ext_resource type="Texture2D" uid="uid://3c3wx83kx5fp" path="res://Assets/Textures/Player/idleB/hero_idleB_0002.png" id="5_y0rm6"]

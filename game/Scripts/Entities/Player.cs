@@ -1,7 +1,7 @@
 using Godot;
 using Maze.Scripts.Constants;
 
-namespace Maze.Scripts.GameObjects;
+namespace Maze.Scripts.Entities;
 
 public partial class Player : CharacterBody2D
 {

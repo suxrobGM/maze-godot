@@ -29,6 +29,24 @@ public class Grid
         var y = Mathf.FloorToInt(worldPosition.Y / CellSize);
         return this[x, y];
     }
+    
+    public Vector2 GetWorldPositionFromNode(Node node, Alignment alignment = Alignment.TopLeft)
+    {
+        var worldPosition = new Vector2();
+        
+        if (alignment is Alignment.Center)
+        {
+            worldPosition.X = node.Position.X * CellSize + CellSize / 2;
+            worldPosition.Y = node.Position.Y * CellSize + CellSize / 2;
+        }
+        else
+        {
+            worldPosition.X = node.Position.X * CellSize;
+            worldPosition.Y = node.Position.Y * CellSize;
+        }
+        
+        return worldPosition;
+    }
 
     /// <summary>
     /// Get the neighbors of a node.
@@ -47,7 +65,7 @@ public class Grid
 
         foreach (var dir in directions)
         {
-            var next = new Vector2(node.GridPosition.X + dir.X, node.GridPosition.Y + dir.Y);
+            var next = new Vector2(node.Position.X + dir.X, node.Position.Y + dir.Y);
             if (next.X >= 0 && next.X < Width && next.Y >= 0 && next.Y < Height)
             {
                 yield return this[(int)next.X, (int)next.Y];
@@ -61,9 +79,7 @@ public class Grid
         {
             for (var y = 0; y < Height; y++)
             {
-                var worldPosition = new Vector2(x * CellSize, y * CellSize);
-                var gridPosition = new Vector2(x, y);
-                _nodes[x, y] = new Node(gridPosition, worldPosition, 0);
+                _nodes[x, y] = new Node(new Vector2(x, y), 0);
             }
         }
     }
