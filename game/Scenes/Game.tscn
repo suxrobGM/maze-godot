@@ -20,7 +20,6 @@ Maze = NodePath("MazeTileMap")
 z_index = 10
 
 [node name="ScoreLabel" type="Label" parent="UI"]
-anchors_preset = -1
 offset_left = 5.0
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_emjdd")

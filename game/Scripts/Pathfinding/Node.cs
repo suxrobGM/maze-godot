@@ -14,7 +14,7 @@ public class Node : IEquatable<Node>
     /// <summary>
     /// The position of the node in the grid. It's a tile position.
     /// </summary>
-    public Vector2 Position { get; }
+    public Vector2 Position { get; } // x, and y coordinates in the grid
     
     /// <summary>
     /// The cost of the node.
