@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://7mse08x8xh43"]
+
+[ext_resource type="Script" path="res://Scripts/Scenes/GameScene.cs" id="1_siv8p"]
+[ext_resource type="PackedScene" uid="uid://d2w64r8ro8fqc" path="res://Maps/Level1.tscn" id="2_4m88d"]
+[ext_resource type="PackedScene" uid="uid://cfffpuxqyp5dq" path="res://GameObjects/Player.tscn" id="3_x1vup"]
+[ext_resource type="PackedScene" uid="uid://cwgr7uffi7p4f" path="res://GameObjects/Enemy.tscn" id="4_bhuhn"]
+[ext_resource type="PackedScene" uid="uid://d2ea1h83lgjbh" path="res://GameObjects/GoldGem.tscn" id="5_mh2ws"]
+[ext_resource type="PackedScene" uid="uid://plwpqjp3hydv" path="res://GameObjects/DiamondGem.tscn" id="6_1mfdn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_emjdd"]
+font_size = 32
+font_color = Color(0, 0.584314, 0.772549, 1)
+
+[node name="World" type="Node2D" node_paths=PackedStringArray("ScoreLabel", "Maze")]
+script = ExtResource("1_siv8p")
+ScoreLabel = NodePath("UI/ScoreLabel")
+Maze = NodePath("MazeTileMap")
+
+[node name="UI" type="Node2D" parent="."]
+z_index = 10
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+offset_left = 5.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_emjdd")
+
+[node name="MessageBox" type="AcceptDialog" parent="UI"]
+initial_position = 1
+
+[node name="MazeTileMap" parent="." instance=ExtResource("2_4m88d")]
+
+[node name="Player" parent="." instance=ExtResource("3_x1vup")]
+position = Vector2(87, 139)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy1" parent="Enemies" instance=ExtResource("4_bhuhn")]
+position = Vector2(62, 958)
+MeasurePerformance = true
+
+[node name="Gems" type="Node2D" parent="."]
+
+[node name="GoldGem1" parent="Gems" instance=ExtResource("5_mh2ws")]
+position = Vector2(777, 637)
+
+[node name="GoldGem2" parent="Gems" instance=ExtResource("5_mh2ws")]
+position = Vector2(396, 701)
+
+[node name="GoldGem3" parent="Gems" instance=ExtResource("5_mh2ws")]
+position = Vector2(942, 933)
+
+[node name="GoldGem4" parent="Gems" instance=ExtResource("5_mh2ws")]
+position = Vector2(908, 136)
+
+[node name="GoldGem5" parent="Gems" instance=ExtResource("5_mh2ws")]
+position = Vector2(68, 477)
+
+[node name="GoldGem6" parent="Gems" instance=ExtResource("5_mh2ws")]
+position = Vector2(491, 347)
+
+[node name="DiamondGem1" parent="Gems" instance=ExtResource("6_1mfdn")]
+position = Vector2(591, 585)
+
+[node name="DiamondGem2" parent="Gems" instance=ExtResource("6_1mfdn")]
+position = Vector2(857, 713)
+
+[node name="DiamondGem3" parent="Gems" instance=ExtResource("6_1mfdn")]
+position = Vector2(63, 743)
+
+[node name="DiamondGem4" parent="Gems" instance=ExtResource("6_1mfdn")]
+position = Vector2(77, 271)
+
+[node name="DiamondGem5" parent="Gems" instance=ExtResource("6_1mfdn")]
+position = Vector2(929, 278)
+
+[node name="DiamondGem6" parent="Gems" instance=ExtResource("6_1mfdn")]
+position = Vector2(529, 844)
