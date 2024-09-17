@@ -21,6 +21,12 @@ Collect all gems in the maze and don't get caught by the enemy.
 - Esc key: Exit to the main menu.
 - Tilda key: Toggle debug mode.
 
+## Credits
+- Sukhrob Ilyosbekov
+- Shashwath Udaya Kumar
+- Reena Sajad Hyder
+- Reemaa Sajad Hyder
+
 ## Screenshots
 ### Main Menu
 ![Screenshot 1](./screenshots/main-menu.png)
